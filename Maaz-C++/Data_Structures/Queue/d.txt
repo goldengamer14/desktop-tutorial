@@ -1,0 +1,38 @@
+// ****Queue.cpp****
+
+{ , b, , f, , } max_size = 6; back_index = 1; front_index = 3; length = max_size - front_index + back_index + 1 = 5;
+
+peek = max_size - front_index + index;
+if (peek >= max_size) peek -= max_size;
+
+index = 0; peek = 6 - 3 + 0 = 3;
+index = 1; peek = 6 - 3 + 1 = 4;
+index = 2; peek = 6 - 3 + 2 = 5;
+index = 3; peek = 6 - 3 + 3 = 6; peek = 6 - 6 = 0;
+index = 4; peek = 6 - 3 + 4 = 7; peek = 7 - 6 = 1;
+
+
+
+{ , b, f, , } max_size = 5; back_index = 1; front_index = 2; length = max_size - front_index + back_index + 1 = 5;
+
+peek = max_size - front_index + index;
+
+index = 0; peek = 5 - 2 + 0 = 3;
+
+// ****Queue_c.c****
+
+    max_size = 6;
+que:
+    {, (fb), , , , } front_index = 1; back_index = 1; Queue_size = back_index - front_index = 0;
+    enqueue_Queue_array("ands", 4);
+    {, a(f), n, d, s, (b)} front_index = 1; back_index = 5; Queue_size = back_index - front_index = 4;
+
+que_ini:
+    {, a(f), b, , , } front_index = 1; back_index = 2; Queue_size = back_index - front_index = 1;
+    enqueue_Queue_array("ndy", 3);
+    {, a(f), n, d, y, b} front_index = 1; back_index = 5; Queue_size = back_index - front_index = 1;
+
+que_ini_arr:
+    {, a(f), t, e, (b), } front_index = 1; back_index = 4; Queue_size = back_index - front_index = 3;
+    enqueue_Queue_array("s", 1)
+    {, a(f), t, e, s, (b)} front_index = 1; back_index = 5; Queue_size = back_index - front_index = 4;
