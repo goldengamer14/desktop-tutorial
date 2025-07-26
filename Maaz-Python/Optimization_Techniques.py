@@ -4,24 +4,24 @@ import numpy as np
 
 # Use Set or Dictionary whenever possible
 def find_intersection_through_list(list_1, list_2):
-    return (element for element in list_1 if element in list_2)
+    return [element for element in list_1 if element in list_2]
 
 
 def find_intersection_thorugh_set(list_1, list_2):
     set_list = set(list_2)
-    return (element for element in list_1 if element in set_list)
+    return [element for element in list_1 if element in set_list]
 
 
 # Define lists to process
-list_1 = range(10**11)
-list_2 = range(5 * 10**10, 15 * 10**10)
+list_1 = range(10**7)
+list_2 = range(5 * 10**6, 15 * 10**6)
 
 begin = time.time()
-intersection_unopt = list(find_intersection_through_list(list_1, list_2))
+intersection_unopt = find_intersection_through_list(list_1, list_2)
 whole_time_unopt = time.time() - begin
 
 begin = time.time()
-intersection_opt = list(find_intersection_thorugh_set(list_1, list_2))
+intersection_opt = find_intersection_thorugh_set(list_1, list_2)
 whole_time_opt = time.time() - begin
 
 print(
