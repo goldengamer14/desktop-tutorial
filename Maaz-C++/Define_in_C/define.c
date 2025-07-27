@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define max_value(data)                                      \
-    {                                                        \
-        typeof(data) largest_number = 0;                     \
-        typeof(data) bit_size = 1;                           \
-                                                             \
-        for (int i = 0; i < sizeof(data) * 8 - 1; i++)       \
-        {                                                    \
-            bit_size *= 2;                                   \
-            largest_number += bit_size;                      \
-        }                                                    \
-                                                             \
-        data = largest_number;                               \
+#define max_value(data)                                              \
+    {                                                                \
+        typeof(data) largest_number = 0;                             \
+        typeof(data) bit_size = 1;                                   \
+                                                                     \
+        for (int i = 0; i < sizeof(data) * 8 - 1; i++)               \
+        {                                                            \
+            bit_size *= 2;                                           \
+            largest_number += bit_size;                              \
+        }                                                            \
+                                                                     \
+        data = largest_number;                                       \
         printf("The number of bits integer holds is: %llu\n", data); \
     }
 
