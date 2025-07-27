@@ -1,0 +1,30 @@
+body {
+    background-color: #fff;
+    color: #000;
+}
+
+#clock {
+    width: 100%;
+
+    position: relative;
+    top: 30vh;
+
+    display: flex;
+    justify-content: center;
+}
+
+#time {
+    color: #f00;
+    font-size: xxx-large;
+
+    position: absolute;
+    top: 44px;
+}
+
+#meridian {
+    color: #000;
+    font-size: x-large;
+
+    position: absolute;
+    top: 92px;
+}

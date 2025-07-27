@@ -1,0 +1,24 @@
+ e.style.backgroundColor = "greenyellow";
+ console.clear();
+
+ e.innerHTML = String(e.innerHTML).replaceAll(`<span class="found">`, "");
+ e.innerHTML = String(e.innerHTML).replaceAll(`</span>`, "");
+
+ let j = String(e.innerHTML).indexOf("<");
+ for (j; j < String(e.innerHTML).indexOf(">") + 1; j++) {
+      e.innerHTML = String(e.innerHTML).replace(String(e.innerHTML).charAt(j), "");
+      console.log(j, String(e.innerHTML).charAt(j));
+  }
+
+if (String(e.innerHTML).includes("span")) { } else {
+
+  let ind2 = String(e.innerHTML).charAt(String(e.innerHTML).toLowerCase().indexOf(s.value.toLowerCase()) + s.value.length - 1);
+  e.innerHTML = String(e.innerHTML).replace(ind2, ind2 + "</span>");
+
+  let ind = String(e.innerHTML).charAt(String(e.innerHTML).toLowerCase().indexOf(s.value.toLowerCase()) - 1);
+  e.innerHTML = String(e.innerHTML).replace(ind, ind + "<span class=found>");
+
+  console.log(String(e.innerHTML), String(e.innerText));
+  console.log(String(e.innerHTML).replace(`</span>`, ""));
+  console.log(String(e.innerHTML).replace(`<span class="found">`, ""));
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new DOC</title>
+</head>
+<body>
+    <div id="d">
+        <p id="p">Player 1 : </p>
+    </div>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded",()=>{
+
+            const p=document.getElementById("p");
+            const d=document.getElementById("d");
+            const prom=prompt("type your name here");
+              p.innerHTML+=String(prom);
+              p.style.color="red";
+              p.style.fontWeight="bold";
+              p.style.backgroundColor="lightblue";
+              p.style.textTransform="uppercase";
+              console.log("im working "+prom.toString());
+              if(String(prom).toUpperCase()=="NOOB"){
+              alert("lol you are a big Noob");
+              }
+              const a=document.createElement("input");
+              a.type="button";
+              a.style.backgroundColor="red";
+              a.style.color="chocolate";
+              document.body.appendChild(a);
+              console.log("width: "+window.innerWidth,"height: "+window.innerHeight);
+              a.onclick=()=>{
+                  window.confirm("are you sure, that you want to Refresh ?");
+                  window.location.reload();
+              }
+
+        });
+    </script>
+</body>
+</html>

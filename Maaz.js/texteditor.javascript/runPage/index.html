@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+
+            let scr = document.createElement("script");
+            scr.setAttribute("type", "text/javascript");
+            let cv = window.sessionStorage.getItem("code value");
+            scr.innerHTML = cv;
+            document.body.appendChild(scr);
+
+        });
+    </script>
+
+</head>
+
+<body>
+</body>
+
+</html>

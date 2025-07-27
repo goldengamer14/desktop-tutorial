@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="height=device-height">
+    <title>Classes of javascript</title>
+</head>
+
+<body>
+
+    <script>
+        class Racer {
+            constructor(name, exp, age, salary) {
+                this.name = name;
+                this.exp = exp;
+                this.age = age;
+                this.salary = salary;
+            }
+
+            yearOfJoin () {
+                let date = new Date();
+                return date.getFullYear() - this.exp;
+            }
+
+            totalMoneyEarned () {
+                return `you have earned: ${this.salary * (this.exp * 12)} till now`;
+            }
+
+            //in this we don't need to make new obj we can simply use Racer.multiply()
+            static multiply (x, y) {
+                return x * y;
+            }
+
+        }
+
+        class formula1 extends Racer{
+            constructor (name, exp, age, salary, car) {
+                super(name, exp, age, salary);
+                this.car = car;
+            }
+        }
+
+        let a = new Racer("Zain", 10, 30, 25000);
+        console.log(a);
+
+        let b = new formula1("Harish",5,35,40000,"audi");
+        console.log(b)
+    </script>
+
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+
+</body>
+
+</html>

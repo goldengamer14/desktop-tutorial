@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="height=device-height" />
+</head>
+
+<body>
+
+    <h1>Welcome to my page</h1>
+    <p id="p1" class="pxn">Hello im paragraph 1</p>
+    <p id="p2" class="pxn">Hello im paragraph 2</p>
+    <p id="p3" class="pxn">Hello im paragraph 3</p>
+    <p id="p4" class="pxn">Hello im paragraph 4</p>
+
+    <br>
+    <input id="finder" type="text" placeholder="My Title" style="color: wheat; background-color: rgb(214, 162, 19);" />
+
+    <script type="text/javascript">
+        console.log("Hello, World!");
+
+        //localStorage.setItem("innerT", document.body.innerText);
+
+        let pxn = document.getElementsByClassName("pxn");
+        Array.from(pxn).forEach(function (e) {
+            localStorage.setItem(`p${Array.from(pxn).indexOf(e)}`, e.innerHTML);
+        })
+
+
+        let f = document.getElementById("finder");
+
+        f.oninput = function () {
+
+            /*
+                if (f.value != "") {
+    
+                    if (document.body.innerHTML.toString().includes("span")) {
+                        document.body.innerHTML = document.body.innerHTML.toString().toLowerCase().replaceAll(`<span style="color:red;background-color:white">`, ``);
+                        document.body.innerHTML = document.body.innerHTML.toString().toLowerCase().replaceAll(`</span>`, ``);
+                        document.body.innerHTML = document.body.innerHTML.toString().toLowerCase().replaceAll(f.value, `<span style="color:red;background-color:white">${f.value}</span>`);
+                    } else {
+                        document.body.innerHTML = document.body.innerHTML.toString().toLowerCase().replaceAll(f.value, `<span style="color:red;background-color:white">${f.value}</span>`);
+                    }
+    
+                } else { document.body.innerText = localStorage.getItem("innerT") }
+            */
+
+
+            Array.from(pxn).forEach(function (e) {
+
+
+                if (f.value != "") {
+
+                    if (e.innerText.toString().toLowerCase().includes(f.value.toString().toLowerCase())) {
+                        if (e.innerHTML.toString().includes("span")) {
+                            e.innerHTML = String(e.innerHTML).replaceAll(`<span style="color:red;background-color:white">`, " ");
+                            e.innerHTML = String(e.innerHTML).replaceAll(`</span>`, " ");
+                        }
+                        e.innerHTML = String(e.innerHTML).toLowerCase().replace(f.value, `<span style=color:red;background-color:white>${f.value}</span>`);
+                    } else {
+                        e.innerHTML = localStorage.getItem(`p${Array.from(pxn).indexOf(e)}`);
+                    }
+
+                } else {
+                    e.innerHTML = String(e.innerHTML).replace(`<span style="color:red;background-color:white">`, " ");
+                    e.innerHTML = String(e.innerHTML).replace(`</span>`, " ");
+                    e.innerHTML = localStorage.getItem(`p${Array.from(pxn).indexOf(e)}`);
+                }
+
+
+            });
+
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .pxn {
+            letter-spacing: 2px;
+            background-color: chocolate;
+            color: yellow;
+            padding: 5px;
+            margin: 4px;
+        }
+
+        #p1 {
+            background-color: burlywood;
+            color: blueviolet;
+        }
+
+        #p2 {
+            background-color: brown;
+            color: red;
+        }
+
+        #p3 {
+            background-color: chocolate;
+        }
+
+        #p4 {
+            background-color: blue;
+        }
+    </style>
+
+</body>
+
+</html>

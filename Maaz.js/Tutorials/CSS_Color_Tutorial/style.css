@@ -1,0 +1,49 @@
+body {
+    background-color: #fcb;
+}
+
+#a {
+    color: #f00;
+    background-color: #4f2;
+    border: 5px solid #84f;
+}
+
+#b {
+    color: #0af;
+    background-color: #bae;
+    border: 5px solid #eab;
+}
+
+#c {
+    color: #daf;
+    background-color: #986;
+    border: 5px solid #a0f;
+}
+
+/* 
+    These represents rgb colors. Starting from 1
+    after 9 comes a;
+    ends with f 
+*/
+
+#h {
+    color: hsl(200, 90%, 40%);
+    background-color: hsl(100, 40%, 60%);
+}
+
+#s {
+    color: hsl(0, 50%, 60%);
+    background-color: hsl(30, 35%, 70%);
+}
+
+#l {
+    color: hsl(150, 70%, 60%);
+    background-color: hsl(250, 60%, 20%);
+}
+
+/*
+    These represents:
+        hue(The color);
+        saturation;
+        lightness.
+*/

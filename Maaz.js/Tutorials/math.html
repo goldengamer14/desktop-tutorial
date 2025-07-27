@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="height=device-height" />
+    <title>Learn Maths with Javascript</title>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            setInterval(function () {
+                let r = 255 * Math.random(), g = 255 * Math.random(), b = 255 * Math.random();
+                document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+            }, 1000);
+        });
+    </script>
+</head>
+
+<body>
+
+    <h1 id="heading"></h1>
+
+    <script type="text/javascript">
+        console.log("hello world");
+        setInterval(function () {
+            let z = Math.PI;
+            //turns to the round figure
+            z = Math.round(25.6);
+            //turns to the next number if decimal(.)
+            z = Math.ceil(5.1);
+            //removes the decimal(after the .) and takes it down
+            z = Math.floor(5.8);
+            z = Math.floor(-5.8);
+            //turns to positive number
+            z = Math.abs(-68);
+            //finds the square root
+            z = Math.sqrt(25);
+            //raise the first number to the power second number
+            z = Math.pow(2, 3);
+            //finds the minimum value
+            z = Math.min(2, 3, 4, 200, 100, 350);
+            //finds the maximum value
+            z = Math.max(2, 3, 4, 200, 100, 350);
+            //generates a random number between 255 and 0
+            z = 255 * Math.random();
+            //generates a random number between 265 and 10
+            z = 255 * Math.random() + 10;
+            //generates a random number between 255 and 10
+            z = 10 + (255 - 10) * Math.random();
+            //generates a random integer(number without decimals) between 255 and 0
+            z = parseInt(10 + (255 - 10) * Math.random());
+
+            console.clear();
+            console.log(z);
+            document.getElementById("heading").innerHTML = z;
+        }, 300);
+    </script>
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        #heading {
+            color: red;
+        }
+    </style>
+
+</body>
+
+</html>

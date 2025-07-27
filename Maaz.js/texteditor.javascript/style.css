@@ -1,0 +1,76 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: whitesmoke;
+    overflow-x: hidden;
+}
+
+#header {
+    background-color: rgb(255, 0, 100);
+    font-size: 35px;
+}
+
+.heads {
+    background-color: rgb(255, 0, 100);
+    display: inline;
+}
+
+#run {
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+    width: 60px;
+    height: 50px;
+    position: relative;
+    left: 40px;
+    text-align: center;
+}
+
+#stop {
+    cursor: pointer;
+    border: 1px solid black;
+    color: black;
+    width: 60px;
+    height: 50px;
+    position: relative;
+    left: 50px;
+}
+
+#save {
+    cursor: pointer;
+    border: 1px solid black;
+    color: black;
+    width: 60px;
+    height: 50px;
+    position: relative;
+    left: 60px;
+    bottom: 6.5px;
+}
+
+#select {
+    margin-left: 80px;
+    color: black;
+    cursor: pointer;
+}
+
+#newOpen {
+    position: relative;
+    left: 43vw;
+    bottom: 2px;
+    cursor: pointer;
+    height: 60px;
+    background-color: burlywood;
+    color: darkorchid;
+}
+
+option {
+    background-color: whitesmoke;
+    color: black;
+}
+
+#code {
+    background-color: black;
+    color: whitesmoke;
+    border: 2px solid rgb(255, 0, 100);
+}

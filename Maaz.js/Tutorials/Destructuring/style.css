@@ -1,0 +1,16 @@
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+#heading {
+    display: flex;
+    justify-content: center;
+    word-spacing: 0.0vw;
+}
+
+#Destructuring {
+    color: #ff0;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}

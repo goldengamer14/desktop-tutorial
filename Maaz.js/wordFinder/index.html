@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=1.0">
+    <title>word Finder</title>
+
+    <script defer src="js/function.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var word;
+
+            var usedWords = [];
+
+            var input = document.getElementById("findWord");
+
+            document.getElementById("makeFindWord").onclick = () => {
+                word = input.value;
+                for (var u of usedWords) {
+                    if (u == word) { return undefined; }
+                }
+                usedWords.push(word);
+
+                var contain = [document.getElementById("searchContainer")];//Array.from(document.getElementsByTagName("div"))
+                findTheWords(word, contain);
+            }
+        });
+    </script>
+    <!-- <script defer src="js/sketch.js" type="text/javascript"></script> -->
+</head>
+
+<body>
+
+    <input class="bgd_color-red" type="text" id="findWord" value="lor" placeholder="Search a word">
+    <br>
+    <br>
+    <button id="makeFindWord">Find it</button>
+    <div id="searchContainer">
+
+        <h1>Ipsum Lorem</h1>
+        <h1>lorem Ipsum</h1>
+        <h1>Lorem ipsum</h1>
+        <h1>lorem ipsum</h1>
+        <h1>LoRem iPsUm lOrEm Lorem</h1>
+
+        <span style="display: block;">lorem ipsum</span>
+
+        <br>
+
+        <b style="display: block;">LoReM iPsUm</b>
+
+        <br>
+
+        <i style="display: block;">lOrEm IpSuM</i>
+
+        <br>
+
+        <a href>ipSUM LORem ipSUM</a>
+
+        <br>
+        <br>
+
+        lorem IPSUM
+
+        <br>
+        <br>
+
+        <div>
+            LOREM ipsum
+        </div>
+
+    </div>
+
+    <style>
+        body {
+            background-color: #444;
+            color: #fff;
+        }
+    </style>
+
+</body>
+
+</html>

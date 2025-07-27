@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=1.0">
+    <title>Try and Catch Error Handling</title>
+
+    <script defer src="http://127.0.0.1:5500/Functions/sketch.js"></script>
+    <script defer src="http://127.0.0.1:5500/Tutorials/Try_Catch/sketch.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        body {
+            background-color: #444;
+            color: #ee0;
+        }
+
+
+        #numInput,
+        #numInput::placeholder {
+            color: #f55;
+            background-color: #000;
+            margin: 20px;
+        }
+
+        #numInputDiv {
+            display: flex;
+            justify-content: center;
+            margin: 20vh 0vw;
+        }
+
+        #response {
+            display: block;
+            margin: 20px;
+        }
+
+        #anotherInput,
+        #anotherInput::placeholder {
+            color: #000;
+            background-color: #f55;
+            margin: 20px;
+            width: 20vw;
+            height: 8vh;
+            top: 3vh;
+            position: relative;
+            left: 31.8vw;
+            border: 2px solid #ff8;
+        }
+
+        #param {
+            color: #000;
+            background-color: #f55;
+            margin: 20px;
+            width: 20vw;
+            height: 18vh;
+            margin-top: 17vh;
+            border: 2px solid #ff8;
+        }
+
+        #anotherInputParent {
+            display: flex;
+            justify-content: flex-start;
+            height: 40vh;
+            width: 98vw;
+            margin: 0px;
+            position: relative;
+            right: 17vw;
+        }
+
+        #getData {
+            margin: 2vw;
+            color: #070;
+            background-color: #f8f;
+            width: 17vw;
+            height: 25vh;
+            font-size: 1.5vw;
+            cursor: pointer;
+            position: relative;
+            top: 2vh;
+            border: 2px solid #000;
+        }
+
+        #sendData {
+            margin: 2vw;
+            color: #0af;
+            background-color: #500;
+            width: 17vw;
+            height: 25vh;
+            font-size: 1.5vw;
+            cursor: pointer;
+            position: relative;
+            top: 2vh;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="anotherInputParent">
+        <span style="position: relative; left: 31.8vw; margin-top: 9vh; color: #ddd">URL: </span>
+        <input type="text" id="anotherInput" value="https://reqres.in/api/users" placeholder="Type the File's location">
+        <span style="position: relative;
+            left: 3vw; width: 10vw; height: 3vh; top: 17vh; color: #ddd">
+            Sending Data: </span>
+
+        <textarea id="param" spellcheck="false" autocomplete="off">{
+    "name": "morpheus",
+    "job": "leader"
+}</textarea>
+        <button id="getData">Get Data</button>
+        <button id="sendData">Send Data</button>
+    </div>
+
+    <div id="numInputDiv">
+        <h1 id="response"></h1>
+        <hr style="margin: 0px;">
+        <input type="number" id="numInput" value placeholder="Type a Number">
+    </div>
+</body>
+
+</html>

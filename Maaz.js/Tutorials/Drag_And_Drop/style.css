@@ -1,0 +1,44 @@
+body {
+    background-color: #b5d;
+}
+
+#heading {
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+.blankBox {
+    background-color: #444;
+    border: 2px solid #000;
+
+    --size: 10vw;
+    width: var(--size);
+    height: var(--size);
+
+    --mx: 1vw;
+    margin-left: var(--mx);
+    margin-right: var(--mx);
+}
+
+.imgBox {
+    background-image: url("image.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.draggedOver {
+    border-color: #f00;
+}

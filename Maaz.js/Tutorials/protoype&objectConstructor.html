@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype and inheritence</title>
+</head>
+
+<body>
+
+    <h1>Welcome to this site</h1>
+    <p class="pxn">im paragraph 1</p>
+    <p class="pxn">im paragraph 2</p>
+    <p class="pxn">im paragraph 3</p>
+    <p class="pxn">im paragraph 4</p>
+
+    <script type="text/javascript">
+
+        console.log("Hello, World!");
+
+        //just an Object literal
+        let animal = {
+            name: "writeAnimalName",
+            type: "write the type of animal",
+            gender: "write the gender of animal",
+
+            namer: function (name) {
+                this.name = name;
+            },
+            typer: function (type) {
+                this.type = type;
+            },
+            genderKnower: function (gender) {
+                this.gender = gender
+            },
+            prototype: function (prot, change) {
+                this.__proto__.change = prot;
+            }
+        }
+
+        //using a function to construct new Object
+        animal = function (name, type, gender) {
+            this.name = name;
+            this.type = type;
+            this.gender = gender;
+
+            this.namer = function (name) {
+                this.name = name;
+            }
+            this.typer = function (type) {
+                this.type = type;
+            }
+            this.genderKnower = function (gender) {
+                this.gender = gender
+            }
+            this.prototype = function (prot, change) {
+                this.__proto__.change = prot;
+            }
+        }
+
+        //Making new Object and console.log to check it
+        let newAnimal = new animal("Zain", "buffalo", "male");
+        let anotherAnimal = new animal("Rashi", "robin", "female");
+        console.log(newAnimal);
+        console.log(anotherAnimal);
+
+        //Writing the Object on the screen
+        let div = document.createElement("div");
+        div.innerHTML = "<br>newAnimal = " + JSON.stringify(newAnimal) + "<br><br>" + "anotherAnimal = " + JSON.stringify(anotherAnimal);
+        div.style.color = "burlywood";
+        div.style.backgroundColor = "brown";
+        document.body.appendChild(div);
+
+    </script>
+
+    <style>
+        body {
+            color: red;
+            background-color: black;
+        }
+
+        .pxn {
+            color: yellow;
+            background-color: green;
+            margin: 8px;
+            margin-left: 0px;
+            margin-right: 0px;
+            padding: 5px
+        }
+    </style>
+
+</body>
+
+</html>

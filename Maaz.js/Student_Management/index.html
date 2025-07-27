@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="height=device-height, initial-scale=1.0" />
+    <title>Maaz Ki Website</title>
+
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script async src="js/functions.js"></script>
+    <script async src="js/sketch.js"></script>
+
+</head>
+
+<body>
+
+    <h1 id="enrollHead">Enroll Student</h1>
+    <div style="position: absolute; top: 20vh;" id="enrollDiv">
+
+        <label for=".nameTaker" class="studentEnrollers labelnam">Enter Student's Name: </label>
+        <input class="studentEnrollers nameTaker" type="text" autocomplete="off" spellcheck="false" placeholder="Type your Student's Name" value="" />
+
+        <br>
+        <br>
+
+        <label for=".rollNoTaker" class="studentEnrollers labelroll">Enter Student's Roll No: </label>
+        <input class="studentEnrollers rollNoTaker" type="number" autocomplete="off" spellcheck="false" placeholder="Type your Student's Roll Number"
+            value="" />
+
+        <br>
+        <br>
+
+        <label for=".subjectTaker" class="studentEnrollers labelsub">Enter Student's Subject: </label>
+        <input class="studentEnrollers subjectTaker" type="text" autocomplete="off" spellcheck="false" placeholder="Type your Student's Subject" value="" />
+
+        <br>
+        <br>
+
+        <button id="enroller" class="studentEnrollers">Enroll Student</button>
+        <button id="enrollHider" class="studentEnrollers">Hide Students</button>
+        <button id="enrollShower" class="studentEnrollers">Show Students</button>
+
+    </div>
+
+    <div style="position: absolute; top: 70vh; left: 1vw; width: 50vw;">
+        <table id="enrollShow">
+        </table>
+    </div>
+
+</body>
+
+</html>

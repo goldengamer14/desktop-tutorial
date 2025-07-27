@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <div id="d"></div>
+        <script type="text/javascript">
+            for(let i=0;i<25;i++){
+                const p=document.createElement("p");
+                document.getElementById("d").appendChild(p);
+                p.setAttribute("style","margin:0px;letter-spacing:5px");
+                p.style.marginTop="1.9vh";
+                for(let j=0;j<4;j++){
+                    p.innerHTML+="i love computers  ";
+                }
+            }
+        </script>
+        <style>
+            body{background-color:black;color:yellow;overflow:hidden;}
+        </style>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="height=device-height" />
+    <title>Objects in javascript</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        class vehicle {
+            constructor(name, color, type) {
+                this.name = name;
+                this.color = color;
+                this.type = type;
+            }
+        }
+        let vehicl = {
+                name : "name",
+                color : "color",
+                type : "type",
+                newV:function(name,color,type){
+                    this.name=name;
+                    this.color=color;
+                    this.type=type;
+                }
+        }
+        let v=[null];
+        v[1] = new vehicle('Maruti', 'blue', 'bike');
+        v[2]=new vehicl.newV('ha','green','truck');
+        console.log(v[1]);
+        console.log(v[2]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="height=device-height">
+    <title>loading screen</title>
+    </script>
+</head>
+
+<body>
+    <div id="scriptHolder">
+        <script type="text/javascript">
+            let dots = [];
+            let loscr = document.createElement("h1");
+            loscr.style.color = "white";
+            loscr.style.position="absolute";
+            loscr.style.left="40%";
+            loscr.style.top="40%";
+            loscr.innerHTML = "Loading";
+            document.body.appendChild(loscr);
+            let loadingScreen = true;
+
+            setInterval(function () {
+                if (loadingScreen === true) {
+                    if (dots.length < 5) {
+                        dots.push('.');
+                        loscr.innerHTML += dots[0];
+                    }
+                    if (dots.length > 4) {
+                        dots.splice(1, dots.length);
+                        loscr.innerHTML = "Loading";
+                    }
+                }
+            }, 200);
+
+
+            let loadingTime = setTimeout(function () {
+                let script = document.createElement("script");
+                script.innerHTML = `
+            document.body.style.backgroundColor = "gray";
+            `;
+                script.setAttribute("id", "scr");
+                document.body.appendChild(script);
+
+                let h = document.createElement("h1");
+                h.innerHTML = "<b>Welcome to our Website</b>";
+                document.body.appendChild(h);
+                h.setAttribute("style", "color: white;background-color: red; letter-spacing: 2px;");
+
+                let txta=document.createElement("textarea");
+                document.body.appendChild(txta);
+                txta.innerHTML="type your text here";
+                txta.setAttribute("cols","100");
+                txta.setAttribute("rows","30");
+                txta.setAttribute("style","border:2px solid black;");
+            }, 5000);
+
+
+            setInterval(function () {
+                if (document.getElementById("scr")) {
+                    loadingScreen = false;
+                    loscr.parentNode.removeChild(loscr);
+                }
+            }, 5000);
+        </script>
+    </div>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</body>
+
+</html>

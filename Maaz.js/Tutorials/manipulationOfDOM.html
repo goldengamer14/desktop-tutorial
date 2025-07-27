@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM.Manipulation</title>
+</head>
+<body>
+    <script>
+    {
+      const a=document.createElement("p");
+      a.innerHTML="<b>im a P with id=a.</b>";
+      document.body.appendChild(a);
+    }
+    {
+        const a=document.createElement("ol");
+        a.style.backgroundColor='red';
+        a.setAttribute("id","ol");
+        a.innerHTML="fruits";
+        document.body.appendChild(a);
+    }
+    {
+        const a=document.createElement("li");
+        a.setAttribute("id","li1");
+        a.innerHTML="<b>orange</b>";
+        a.style.backgroundColor="Orange";
+        document.querySelector("#ol").appendChild(a);
+    }
+    {
+        const a=document.createElement("li");
+        a.setAttribute("id","li2");
+        a.innerHTML="<b>Apple</b>";
+        a.style.backgroundColor="rgb(200,0,0)";
+        document.querySelector("#ol").appendChild(a);
+    }
+    {
+        const a=document.createElement("li");
+        a.setAttribute("id","li3");
+        a.innerHTML="<b>Guava</b>";
+        a.style.backgroundColor="rgb(0,255,0)";
+        document.querySelector("#ol").appendChild(a);
+    }
+    {
+    const a=document.createElement("li");
+    a.setAttribute("id","li4");
+    a.innerHTML="<b>chickoo</b>";
+    a.style.backgroundColor="brown";
+    document.querySelector("#ol").appendChild(a);
+    }
+    {
+        const chick=document.querySelector("#li4");
+        const a=document.createElement("input");
+        a.setAttribute("id","inp");
+        a.value=chick.innerText;
+        a.style.backgroundColor="brown";
+
+        const b=document.createElement("input");
+        b.setAttribute("id","btn");
+        b.type="button";
+        b.value="change List";
+        document.body.appendChild(b);
+        b.onclick=function(){
+            chick.replaceWith(a);
+        }
+        console.log("does b has an id? Ans:"+b.hasAttribute("id"));
+    }
+    {
+    document.addEventListener("DOMContentLoaded",()=>{
+        const a=document.querySelector("#aer");
+        console.log(a.hasAttribute("href"));
+        a.onclick=function(){
+            window.location.href=a.getAttribute("href");
+        }
+    });
+    }
+    </script>
+
+    <h1 id="aer" href="https://www.codeWithHarry.com">Go To CodeWithHarry</h1>
+
+</body>
+
+
+</html>

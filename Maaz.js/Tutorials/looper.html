@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>looper</title>
+</head>
+<body>
+    <script type="text/javascript" defer="">
+        let p=document.createElement("p");
+        p.innerHTML="i love computers ";
+        for(let i=0;i<99;i++){
+            p.innerHTML+="i love computers ";
+            p.setAttribute("style","font-size:20px;color:blue;background-color:black");
+            document.body.appendChild(p);
+            for(let j=0;j<400;j+=4){
+                if(i==j){
+                    p.innerHTML+="<br>";
+                }
+            }
+        }
+        console.log(Number(Infinity));
+    </script>
+</body>
+</html>

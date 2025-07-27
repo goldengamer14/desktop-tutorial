@@ -1,0 +1,100 @@
+body {
+    background-color: #444;
+    overflow-x: hidden;
+}
+
+#Head {
+    color: #d55;
+    position: relative;
+    left: 33vw;
+}
+
+#showTime {
+    color: #afa;
+    text-align: center;
+
+    position: relative;
+    right: 3.2vw;
+
+    letter-spacing: 0.5vw;
+}
+
+.time-date-span {
+    border: 2px solid hsl(46, 76%, 56%);
+
+    padding-left: 2vw;
+    padding-right: 2vw;
+
+    letter-spacing: 0.5vw;
+
+    color: #aaf;
+}
+
+#Alert {
+    position: relative;
+    right: 3vw;
+    color: hsl(70, 25%, 60%);
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+.Label {
+    color: hsl(207, 71%, 52%);
+    font-weight: bold;
+    font-size: large;
+}
+
+.Time {
+    width: 146px;
+    height: 15px;
+    background: #aaa;
+    color: #aff;
+}
+
+.Time::placeholder {
+    color: #aff;
+}
+
+.Date {
+    width: 146px;
+    height: 15px;
+    background: #aaa;
+    color: #ffa;
+
+    position: relative;
+    left: 0.8vw;
+}
+
+.Date::placeholder {
+    color: #ffa;
+}
+
+.DateLabels {
+    color: hsl(46, 76%, 56%);
+    position: relative;
+    left: 0.8vw;
+}
+
+#DateDiv,
+#TimeDiv,
+#setButtonDiv {
+    position: relative;
+    left: 20vw;
+}
+
+
+#setButton {
+    color: hsl(108, 94%, 49%);
+    background-color: hsl(283, 84%, 58%);
+    font-weight: bold;
+    font-size: initial;
+
+    position: relative;
+    left: 20vw;
+
+    width: 150px;
+    height: 30px;
+}

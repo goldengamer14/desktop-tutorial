@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=1.0">
+    <title>Dictionary</title>
+
+    <script defer src="http://127.0.0.1:5500/Ajax-Tutorial/js/function.js" type="text/javascript"></script>
+    <script defer src="http://127.0.0.1:5500/Tutorials/Exercise-5/sketch.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <input type="text" value="" placeholder="Type the word" />
+    <button>Get Meanings/Definitions</button>
+
+    <ul id="printer"></ul>
+
+    <style type="text/css">
+        body {
+            background-color: whitesmoke;
+            overflow: hidden;
+        }
+
+
+        input {
+            color: greenyellow;
+            background-color: blueviolet;
+            display: block;
+            position: absolute;
+            left: 20vw;
+            top: 60vh;
+            width: 50vw;
+            height: 10vh;
+            font-size: 3vw;
+            font-weight: lighter;
+            letter-spacing: 3px;
+        }
+
+        button {
+            color: gold;
+            background-color: red;
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            left: 30vw;
+            top: 80vh;
+            width: 20vw;
+            height: 5vh;
+            font-weight: bolder;
+            font-size: 1vw;
+            letter-spacing: 3px;
+        }
+
+        .validWords, .invalidWord{
+            position: relative;
+            left: 20vw;
+        }
+
+        ::placeholder {
+            color: greenyellow;
+            background-color: blueviolet;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Tutorial</title>
+</head>
+<body>
+    <input id="colChange" type="text" value="black"/>
+    <script type="text/javascript">
+
+        const Color=window.localStorage.getItem("Color");
+        document.getElementById("colChange").value=Color;
+        document.body.style.backgroundColor=document.getElementById("colChange").value;
+
+        document.getElementById("colChange").oninput=function(){
+        document.body.style.backgroundColor=document.getElementById("colChange").value;
+        window.localStorage.setItem("Color",document.getElementById("colChange").value);
+        }
+
+        const Villains=['Loki','Thanos','Hela'];
+        window.localStorage.setItem("villains",JSON.stringify(Villains));
+        console.log( JSON.parse(localStorage.getItem("villains")));
+
+    </script>
+</body>
+</html>

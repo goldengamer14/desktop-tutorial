@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <meta charset="utf-8"/>
+        <title>javascript finder</title>
+
+
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded",()=>{
+const a=document.querySelectorAll("a");
+console.log(a);
+for(let i=0;i<a.length;i++){
+
+    if(String(a[i].innerHTML).includes("javascript")){
+
+        console.log(a[i]);
+        a[i].setAttribute("class","jser");
+        console.log(a[i].parentElement,a[i].className,a[i].childNodes);
+
+    }
+}
+            });
+        </script>
+
+
+    </head>
+    <body>
+        <div id="md">
+        <a href="https://www.google.com" target="_blank">javascript & more</a>
+        <a href="https://www.google.com" target="_blank" style="background-color:white;padding:10px;color:brown;font-weight:bold;font-size:large;">hell</a>
+        <a href="https://www.google.com" target="_blank">javascript</a>
+        </div>
+        <style>
+            body{background-color:black;overflow:hidden;}
+            .jser{color:red;background-color:yellow;font-weight:bold;font-style:italic;font-size:large;padding:10px}
+        </style>
+    </body>
+</html>

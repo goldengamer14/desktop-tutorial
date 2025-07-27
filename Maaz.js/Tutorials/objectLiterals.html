@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="height=device-height" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>this is an object learning html file</title>
+</head>
+
+<body>
+    <h1 style="color: red;padding: 10px;letter-spacing: 2px;background-color: aquamarine;border: 4px solid burlywood;">
+        Welcome to our Website</h1>
+    <p class="p">this is paragraph 1</p>
+    <p class="p">this is paragraph 2</p>
+    <p class="p">this is paragraph 3</p>
+    <p class="p">this is paragraph 4</p>
+
+    <script>
+
+        class obj {
+            constructor() {
+                this.name = "India",
+                    this.won = 23,
+                    this.lose = 2,
+                    this.manOfTheTournament = "MS Dhoni"
+            }
+            showData() {
+                return "yes this is a function";
+            }
+        }
+        document.body.innerHTML += `<span style="color: rgb(0,255,0)">` + JSON.stringify(new obj()); +`</span>`;
+        let f = function () {
+            let o = new obj();
+            o.__proto__.lose = 0;
+            o.__proto__.setName = function (myName) {
+                this.name = myName;
+            }
+            console.log(o);
+            console.log(o.showData());
+            console.log(o.__proto__);
+        }();
+
+    </script>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .p {
+            color: yellow;
+            background-color: brown;
+            border: 2px solid blue;
+            letter-spacing: 2px;
+            padding: 10px;
+        }
+    </style>
+</body>
+
+</html>

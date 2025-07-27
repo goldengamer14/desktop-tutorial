@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events and Events Handlers</title>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded",function(e){
+
+            console.log("are you running?");
+            window.confirm(e.target);
+            console.log(Array.from(e.target));
+            document.querySelector("#ul").onclick=function(e){
+              console.log("you clicked at the: "+e.offsetY+" & "+e.clientY);
+            }
+
+
+        });
+    </script>
+
+
+</head>
+<body>
+    <h1>hello friends this is my heading</h1> 
+    <ul id="ul">
+        <li style="color:red" id="li1" class="li">im the list 1</li>
+        <li style="color:green" id="li2" class="li">im the list 2</li>
+        <li style="color:blue;" id="li3" class="li">im the list 3</li>
+        <li style="color:burlywood" id="li4" class="li">im the list 4</li>
+    </ul>
+    <style>
+        #s{position:absolute; top:0px; left:0px;}
+        body{background-color: black;color:white;}
+    </style>
+</body>
+</html>

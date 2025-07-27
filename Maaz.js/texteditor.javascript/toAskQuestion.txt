@@ -1,0 +1,31 @@
+<title>How to close tabs in javascript</title>
+<body>
+    I wanted to make an online IDE clone and i want it to work on another tab.
+    Obviously because if someone types " document.body.innerHTML = '' ",
+    then he/she will have to reload. Now here's my code for that problem:
+    `
+    document.getElementById("run").onclick = function () {
+            Run = true;
+            window.sessionStorage.setItem("Running", Run);
+
+            let code = document.getElementById("code");
+            window.sessionStorage.setItem("code value", code.value);
+
+            let href = "http://127.0.0.1:5500/texteditor.javascript/runPage/index.html";
+            window.open(href, "_blank");
+        }
+    `
+
+    and in the html file in which i will run my stuff(runPage.html):
+    `
+    <script type="text/javascript">
+        let scr = document.createElement("script");
+        scr.setAttribute("type", "text/javascript");
+        scr.innerHTML = window.sessionStorage.getItem("code value");
+        document.body.appendChild(scr);
+    </script>
+    `
+    Now that file onreloading is'nt reloading the sessionStorage so tell me how do i fix it, OR
+    maybe i want to close the old tab before i open the another by using window.close(href),
+    But it closes my own window. Now please tell me how do i do it.
+</body>

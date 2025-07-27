@@ -1,0 +1,112 @@
+body {
+    overflow-x: hidden;
+}
+
+#topper {
+    background-color: gray;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    right: 8px;
+}
+
+#BookTaker {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 30px;
+    position: relative;
+    left: 20vw;
+    width: 60vw;
+    height: 3vh;
+}
+
+#BookLabel {
+    margin-top: 30px;
+    position: relative;
+    left: 20%;
+}
+
+#OwnerTaker {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 30px;
+    position: relative;
+    left: 19.2vw;
+    width: 60vw;
+    height: 3vh;
+}
+
+#OwnerLabel {
+    margin-top: 30px;
+    position: relative;
+    left: 19.2vw;
+}
+
+#type {
+    font-size: 15px;
+    position: relative;
+    left: 25vw;
+    top: 17px;
+}
+
+#CustomLabel {
+    width: 50px;
+    border: none;
+}
+
+.typeCheckLabel {
+    position: relative;
+    bottom: 3px;
+}
+
+.typeCheck {
+    color: black;
+    font-size: 15px;
+    position: relative;
+    left: 28vw;
+    cursor: pointer;
+}
+
+#BookAdder {
+    background-color: rgba(0, 0, 255, 1);
+    position: relative;
+    left: 20vw;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+#ClearBooks {
+    background-color: rgba(0, 0, 255, 1);
+    position: relative;
+    left: 30vw;
+    bottom: 1px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+#BookRemover {
+    display: inline;
+    position: relative;
+    left: 65vw;
+    cursor: pointer;
+}
+
+#RemoveBookInput {
+    position: relative;
+    left: 70vw;
+    width: 300px;
+}
+
+#BookTable {
+    color: black;
+    background-color: white;
+    position: relative;
+    left: 15vw;
+    font-size: 20px;
+}
+
+th, td, tr {
+    border: 1px solid black;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}

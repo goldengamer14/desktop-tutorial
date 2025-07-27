@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Exercise-2</title>
+</head>
+
+<body>
+    <h1 id="heading">Click on me (Twice)</h1>
+    <script type="text/javascript">
+        const der = localStorage.getItem("diver");
+        const d = document.createElement("div");
+        document.body.appendChild(d);
+        d.setAttribute("id", "dive");
+        if (der) {
+            document.getElementById("heading").innerHTML = der;
+        }
+        d.appendChild(document.getElementById("heading"));
+        d.onclick = function (e) {
+            d.contentEditable = "true";
+        }
+        d.onblur = function () {
+            d.contentEditable = "false";
+            localStorage.setItem("diver", d.innerText);
+        }
+    </script>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</body>
+
+</html>

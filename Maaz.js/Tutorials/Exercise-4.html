@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="height=device-height" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        console.log("Hello World");
+        class library {
+            constructor(list) {
+                this.bookList = list.split(",");
+                this.issuedBooks = [];
+
+                if (localStorage.getItem("myLibrary")) {
+                    this.bookList = JSON.parse(localStorage.getItem("myLibrary"));
+                }
+
+            }
+            getBooksList() {
+                return this.bookList;
+            }
+            showBook(name) {
+                for (let i = 0; i < this.bookList.length; i++) {
+                    let arr = this.bookList;
+                    if (String(arr[i]).includes(name)) {
+                        return arr[i];
+                    }
+                }
+            }
+            issueBook(name, user) {
+                for (let i = 0; i < this.bookList.length; i++) {
+                    let arr = this.bookList;
+                    if (String(arr[i]).includes(name)) {
+                        this.issuedBooks.push([arr[i], user]);
+                        return this.issuedBooks;
+                    }
+                }
+
+                for (let i = 0; i < this.bookList.length; i++) {
+                    let arr = this.bookList;
+                    if (String(arr[i]).includes(name) == false) {
+                        console.error("this book does'nt exist in your library");
+                        return "book not found";
+                    }
+                }
+            }
+            removeBook(name) {
+                let arr = this.bookList;
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr.includes(name)) {
+                        this.bookList.splice(arr.indexOf(name), 1);
+                        localStorage.setItem("myLibrary", JSON.stringify(this.bookList));
+                        return this.bookList;
+                    }
+                }
+                for (let i = 0; i < arr.length; i++) {
+                    if (i == arr.length) {
+                        if (arr.includes(name) == false) {
+                            return "this book does'nt exist in your library";
+                        }
+                    }
+                }
+                
+            }
+            addBook(name) {
+                this.bookList.push(name);
+                this.saveLibrary();
+                return this.bookList;
+            }
+            saveLibrary() {
+                localStorage.setItem("myLibrary", JSON.stringify(this.bookList));
+                return this.bookList;
+            }
+        }
+
+        let a = new library("Hitopadesh, Deadpool 2, Spiderman: No Way Home");
+        console.log(a);
+        console.log(a.getBooksList());
+        console.log(a.showBook("Deadpool 2"));
+        console.log(a.issueBook("Spiderman", "Maaz"));
+    </script>
+
+</body>
+
+</html>

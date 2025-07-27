@@ -1,0 +1,18 @@
+if( document.body.innerHTML.includes(input.value) ) {
+    document.body.innerHTML += document.body.innerHTML.toString().toLowerCase().replaceAll(input.value, `<span style=color:red;>${input.value}</span>`);
+}
+
+let what = "lorem ipsum";
+
+Array.from(document.all).forEach(function (e) {
+    if (String(e.innerHTML).toLowerCase().includes(what)) {
+        let index = [];
+        k = String(e.innerHTML);
+        index[0] = k.toLowerCase().indexOf(what);
+        index[1] = index[0] + what.length;
+
+        k = k.substring(index[0], index[1]);
+        e.innerHTML = String(e.innerHTML).replace(k, `<span style=color:red>${k}</span>`);
+        console.log(k, e);
+    }
+})

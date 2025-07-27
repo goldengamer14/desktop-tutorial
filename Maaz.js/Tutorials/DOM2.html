@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Document</title>
+</head>
+<body>
+    <h1 style="color:rgba(248, 14, 217, 1)">welcome to Maaz's Document</h1>
+    <div id="d1">im a d1</div>
+    <div id="d2">im a d2</div>
+    <div id="d3">im a d3</div>
+    <div id="d4">im a d4</div>
+    <script type="text/javascript">
+            console.log("it works");
+            console.log(document.children);
+            for(let a of Array.from(document.all)){
+                a.style.backgroundColor="black";
+                console.log(a);
+            }
+    </script>
+    <style>
+        body{background-color:gray;}
+        #d1{color:blanchedalmond}#d2{color:aquamarine}
+        #d3{color:rgb(255,255,200)}#d4{color:beige}
+    </style>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="height=device-height" />
+
+    <script type="text/javascript">
+        window.document.addEventListener("DOMContentLoaded", function () {
+            var head = document.getElementById("head");
+
+            setTimeout(function () {
+                for (var i = 1; i <= 10000; i++) {
+                    window.console.log("the value of i is: " + i);
+                    head.innerHTML = "The value of i is: " + i;
+
+                    setTimeout(function () {}, 10);
+                    continue;
+                }
+            }, 1);
+
+            window.document.getElementById("header").innerHTML = "finally done printing";
+            window.console.log("finally done printing");
+        });
+    </script>
+
+</head>
+
+<body style="color: white; background-color: black;">
+
+    <h1 id="head">0</h1>
+    <h1 id="header"></h1>
+
+</body>
+
+</html>

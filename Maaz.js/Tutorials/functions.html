@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <script type="text/javascript">
+        console.time("loaded");
+        document.addEventListener("DOMContentLoaded", function () {
+            const blace = function () {
+                const inp = document.querySelectorAll("input");
+                for (let i of inp) {
+                    const a = document.createElement("p");
+                    a.innerHTML = `im not a robot ${i.value}`;
+                    i.addEventListener("input", function () {
+                        a.innerHTML = `im not a robot ${i.value}`;
+                    });
+                    a.style.backgroundColor = "black";
+                    a.style.color = "white";
+                    document.body.appendChild(a);
+                    console.timeEnd("loaded");
+                    console.time("let"); {
+                        let i = 0; console.log(i);
+                    } console.timeEnd("let");
+                    console.time("const"); {
+                        const i = 0; console.log(i);
+                    } console.timeEnd("const");
+                    const ier = function () {
+                        console.time("var"); {
+                            var i = 0; console.log(i);
+                        } console.timeEnd("var");
+                    }();
+                }
+            }();
+        });
+    </script>
+    <p id="ant">im an ant</p>
+    <input type="text" value="" />
+</body>
+
+</html>

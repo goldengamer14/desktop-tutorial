@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events++</title>
+</head>
+<body>
+    <script type="text/javascript">
+    {
+        const a=document.createElement("input");
+        a.type="button";
+        console.log(a);
+        a.setAttribute("id","btn1");
+        document.body.appendChild(a);
+        a.onmouseenter=function(){
+            console.log(`mouseEnetered on:${document.querySelector("#btn1")}`);
+        }
+        a.onmouseleave=function(){
+            console.clear();
+        }
+    }
+    {
+        const a=document.createElement("input");
+        a.type="button";
+        a.style.backgroundColor="white";
+        a.style.color="black";
+        a.value="X";
+        a.setAttribute("style","position:absolute;right:1vw;top:1vh");
+        document.body.appendChild(a);
+        a.onmouseover=function(){
+            a.style.backgroundColor="red";
+            a.style.color="white";
+        }
+        a.onmouseleave=function(){
+            a.style.backgroundColor="white";
+            a.style.color="black";   
+        }
+        a.onclick=function(){
+            window.close();
+        }
+    }
+    {
+        const a=document.createElement("input");
+        a.type="button";
+        a.style.marginLeft="50px"
+        document.body.appendChild(a);
+        a.onmousemove=function(){
+            console.log(`stop moving your mouse on:${a}`);
+        }
+    }
+    document.addEventListener("mousemove",function(e){
+        document.body.style.backgroundColor=`rgb(${e.offsetX},${e.offsetY},${e.offsetX})`;
+    });
+    </script>
+    <style>
+        body{background-color:black;}
+    </style>
+</body>
+</html>

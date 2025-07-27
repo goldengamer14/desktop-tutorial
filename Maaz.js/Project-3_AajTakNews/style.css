@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@1');
+
+body {
+    font-family: 'DM Serif Text', serif
+}
+
+.navbar {
+    background-color: rgb(60, 60, 60);
+    right: 0.6vw;
+    bottom: 10px;
+}
+
+.navigator {
+    display: inline;
+    top: 5px;
+}
+
+.navigator:hover {
+    color: yellow;
+}
+
+details {
+    background-color: lightslategray;
+}
+
+.newsShow {
+    color: gold;
+    font-size: large;
+}
+
+.newsHeadline {
+    color: black;
+}
+
+h3 {
+    font-weight: lighter;
+}

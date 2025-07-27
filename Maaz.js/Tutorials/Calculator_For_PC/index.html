@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+
+    <script async src="sketch.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+
+    <button id="calculate">calculate</button>
+    <script type="text/javascript">
+        for (let i = 0; i < 15; i++) {
+            document.body.innerHTML += "<br>";
+        }
+    </script>
+    <h1>Note: This Calculator will use DMAS, i.e. first it will perform 'Division'<br>
+        and then 'Multiplication' then 'Addition' and at last 'Substraction'
+    </h1>
+
+    <style type="text/css">
+        body {
+            background-color: black;
+        }
+
+        h1 {
+            color: yellow;
+            background-color: brown;
+        }
+
+        #calculate {
+            color: chartreuse;
+            background-color: blueviolet;
+            border: 2px solid saddlebrown;
+            padding: 2vh 4vw;
+            font-size: 5vw;
+            font-weight: bold;
+            position: relative;
+            left: 30vw;
+            top: 10vh;
+            cursor: pointer;
+        }
+    </style>
+
+</body>
+
+</html>

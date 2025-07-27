@@ -1,0 +1,19 @@
+#custom{
+    background-color:black;
+    color:red;
+    position:relative;
+    left:20vw;
+}
+
+#select{position:relative;left:20vw;}
+  #red{background-color: red;color:black;}
+  #green{background-color: green;color:black;}
+  #blue{background-color: blue;color:black;}
+
+body{background-color:rgb(0,0,0);color:rgb(255,255,255);}
+#btn{position:absolute;left:10px;top:150px;background-color:red;color:darkblue}
+#x{position:absolute;top:40vh;left:250px;color:white;background-color: black;}
+#y{position:absolute;top:40vh;left:0;color:white;background-color: black;}
+#sum{position:absolute;top:30vh;left:205px;color:white;}
+#rp{position:absolute;top:200px}
+#pertester{color:white;font-size:25px;position:relative;top:-10px}

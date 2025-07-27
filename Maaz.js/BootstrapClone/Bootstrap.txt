@@ -1,0 +1,113 @@
+//Bootstrap class for Background-Colors
+
+Array.from(eve).forEach(function (e) {
+    if (e.getAttribute("class")) {
+        if (String(e.getAttribute("class")).includes("bg-")) {
+            let that = String(e.getAttribute("class"));
+            let index = that.indexOf("bg-");
+            let k = String(e.getAttribute("class")).substring(index, that.length);
+
+            k = k.split(" ");
+            k.forEach(function (e) {
+                if (e.includes("bg-")) {
+                    k = e.replace("bg-", "");
+                }
+            })
+
+            e.style.backgroundColor = k;
+        }
+    }
+})
+
+
+//Bootstrap class for Colors
+
+Array.from(eve).forEach(function (e) {
+    if (e.getAttribute("class")) {
+        if (String(e.getAttribute("class")).includes("col-")) {
+            let that = String(e.getAttribute("class"));
+            let index = that.indexOf("col-");
+            let k = String(e.getAttribute("class")).substring(index, that.length);
+
+            k = k.split(" ");
+            k.forEach(function (e) {
+                if (e.includes("col-")) {
+                    k = e.replace("col-", "");
+                }
+            })
+
+            e.style.color = k;
+        }
+    }
+})
+
+
+//Makes the Bootstrap class for margin
+
+    Array.from(eve).forEach(function (e) {
+        if (e.getAttribute("class")) {
+            if (String(e.getAttribute("class")).includes("mx-")) {
+                let that = String(e.getAttribute("class"));
+                let index = that.indexOf("mx-");
+                let k = String(e.getAttribute("class")).substring(index, that.length);
+
+                k = k.split(" ");
+                k.forEach(function (e) {
+                    if (e.includes("mx-")) {
+                        k = e.replace("mx-", "");
+                    }
+                })
+
+                if (String(k).endsWith("px") || String(k).endsWith("vw") || String(k).endsWith("vh") ||
+                    String(k).endsWith("%")) {
+                    e.style.marginRight = k;
+                } else {
+                    e.style.marginLeft = k + "px";
+                    e.style.marginRight = k + "px";
+                }
+            }
+        }
+    })
+
+// if (String(e.getAttribute("class")).includes(this.className)) {
+
+    //     let k = String(e.getAttribute("class"));
+
+    //     k = k.split(" ");
+    //     for (let i = 0; i < k.length; i++) {
+
+    //         if (k[i].includes(`${this.className}`)) {
+
+    //             var abcd = String(k[i]);
+    //             abcd = String(abcd);
+
+    //             k = k[i].replace(`${this.className}`, "");
+    //             k = k.replaceAll("_", " ");
+
+    //         }
+
+    //     }
+
+    //     var inc = `.${abcd} { ${this.what}: ${k}; } `;
+
+    //     if (document.getElementsByTagName("style")[0]) {
+
+    //         if (document.getElementsByClassName(abcd)) {
+    //             document.getElementsByTagName("style")[0].innerHTML += inc;
+    //         }
+
+    //     }
+    //     else {
+
+    //         let st = document.createElement("style");
+    //         st.innerHTML += inc;
+    //         document.body.appendChild(st);
+
+    //     }
+
+    // }
+
+// new NewClass("bord-style-", "border-style").normal();
+// new NewClass("bord-col-", "border-color").normal();
+// new NewClass("bord-size-", "border-width").measurement();
+// new NewClass("bord-radius-", "border-radius").measurement();

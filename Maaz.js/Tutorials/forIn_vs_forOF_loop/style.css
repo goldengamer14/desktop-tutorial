@@ -1,0 +1,13 @@
+#heading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    background-color: hsl(240, 50%, 50%);
+    color: hsl(140, 100%, 90%);
+}
+
+#forOfObj {
+    position: absolute;
+    left: 38vw;
+}

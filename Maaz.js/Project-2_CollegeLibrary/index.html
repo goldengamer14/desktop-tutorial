@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="height=device-height" />
+    <title>Project 2</title>
+
+    <script defer src="js/sketch.js" type="text/javascript"></script>
+
+    <script defer src="js/BootstrapClone.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-sandybrown col-black">
+
+    <div id="topper">
+        <h4 style="display: inline;cursor: pointer;margin-left: 5px;" class="topperChild">College Library</h4>
+        <p style="display: inline;margin-left: 40px;cursor: pointer;" class="topperChild">Home Page</p>
+    </div>
+
+
+    <label id="OwnerLabel" for="#OwnerTaker">Owner: </label> <input type="text" class="col-black" id="OwnerTaker"
+        placer="Owner's name" />
+    <br>
+    <label id="BookLabel" for="#BookTaker">Book: </label> <input type="text" id="BookTaker" class="col-black"
+        placer="Book" />
+
+    <br>
+
+    <label id="type" class="col-black" for="#checkType">Type: </label>
+    <div id="checkType">
+        <label class="typeCheck typeCheckLabel" for=".typeCheck">Programming</label>
+        <input class="typeCheck" type="radio" value="Programming" />
+        <br>
+
+        <label class="typeCheck typeCheckLabel" for=".typeCheck">Cooking</label>
+        <input class="typeCheck" type="radio" value="Cooking" />
+        <br>
+
+        <label class="typeCheck typeCheckLabel" for=".typeCheck">Inspiration</label>
+        <input class="typeCheck" type="radio" value="Inspiration" />
+        <br>
+
+        <label class="typeCheck typeCheckLabel" for=".typeCheck">Comic</label>
+        <input class="typeCheck" type="radio" value="Comic" />
+        <br>
+
+        <label class="typeCheck typeCheckLabel" for=".typeCheck" style="cursor: text;">
+            <input type="text" id="CustomLabel" class="bg-sandybrown" placer="Custom" value="Custom" /> </label>
+        <input id="Custom" class="typeCheck" type="radio" value="Custom" />
+    </div>
+    <br>
+    <button type="button" class="col-white" id="BookAdder">Add Book</button>
+
+    <button type="button" class="col-white" id="ClearBooks">Reset Library</button>
+
+    <button type="button" id="BookRemover" class="col-white bg-black">
+        Remove Book
+    </button>
+
+    <br>
+    <br>
+
+    <input type="text" class="col-yellowgreen bg-black" placer="Remove Book by Name" id="RemoveBookInput" />
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1 style="position: relative;left: 14.8%">Books List</h1>
+    <table id="BookTable" class="bg-white col-black">
+        <tbody id="tablebody">
+            <tr>
+                <th>sr.</th>
+                <th>Name</th>
+                <th>Owner</th>
+                <th>Type</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <style></style>
+</body>
+
+</html>

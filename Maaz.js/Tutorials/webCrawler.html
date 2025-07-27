@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <meta charset="utf-8"/>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded",function(){
+                const a=document.querySelectorAll(".style-scope");
+                for(let b of a){
+                  if(String(b.innerHTML).toLowerCase().includes("qna")){
+                    console.log(String(b.innerHTML).indexOf("qna"));
+                  }
+                }
+                document.body.style.backgroundColor="gray";
+            });
+        </script>
+    </head>
+    <body>
+        <div class="style-scope">
+            <p class="style-scope">im a qna man</p>
+        </div>
+        <div class="style-scope">
+            <p>mein tumhe nahi jaanta</p>
+        </div>
+    </body>
+</html>

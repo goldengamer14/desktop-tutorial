@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="height=device-height" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <script type="text/javascript">
+        console.log("hello world");
+        let date = new Date();
+        console.log(date);
+        console.log("year: ", date.getFullYear(), date.getUTCFullYear());
+        console.log("month: ", date.getMonth(), date.getUTCMonth());
+        console.log("date: ", date.getDate(), date.getUTCDate());
+        console.log("day: ", date.getDay(), date.getUTCDay());
+        console.log("hour: ", date.getHours(), date.getUTCHours());
+        console.log("minutes: ", date.getMinutes(), date.getUTCMinutes());
+        console.log("seconds: ", date.getSeconds(), date.getUTCSeconds());
+        console.log("milliseconds: ", date.getMilliseconds(), date.getUTCMilliseconds());
+        console.log("Number of seconds from 1970: ", date.getTime());
+
+        date.setFullYear(2025);
+        date.setMonth(0);
+        date.setDate(11);
+        date.setHours(24);
+        date.setMinutes(5);
+        date.setSeconds(30);
+        date.setMilliseconds(70);
+        console.log(date);
+    </script>
+
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+</body>
+
+</html>

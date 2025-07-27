@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div>
+        <h1>Welcome to the HTML 5 Website</h1>
+        <p>paragraph 1</p>
+        <p>paragraph 2</p>
+        <p>paragraph 3</p>
+        <p>paragraph 4</p>
+    </div>
+    <input type="button" value="X" id="btn" />
+    <script type="text/javascript">
+        document.addEventListener("mousemove", function (e) {
+
+            let r = e.clientX / (window.innerWidth / 255);
+            let g = e.clientY / (window.innerHeight / 255);
+            let b = e.clientY / (window.innerHeight / 255) + e.clientX / (window.innerWidth / 255);
+            document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+
+            const p = document.getElementsByTagName("p");
+            const h = document.getElementsByTagName("h1");
+
+            b = e.clientY / (window.innerHeight / 255) - e.clientX / (window.innerWidth / 255);
+
+            Array.from(p).forEach(function (element) {
+                element.style.color = `rgb(${b},${g},${r}`;
+            });
+            Array.from(h).forEach(function (element) {
+                element.style.color = `rgb(${g},${b},${r}`;
+            });
+        });
+        const btn = document.getElementById("btn");
+        btn.onclick = function () { window.close(); }
+        btn.onmouseover = function (e) {
+            e.target.style.backgroundColor = "red";
+            e.target.style.color = "white";
+        }
+        btn.onmouseleave = function (e) {
+            e.target.style.backgroundColor = "white";
+            e.target.style.color = "black";
+        }
+    </script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        p {
+            margin: 4px;
+        }
+
+        #btn {
+            position: absolute;
+            right: 2vw;
+            top: 2vh;
+            color: black;
+            background-color: white;
+        }
+    </style>
+</body>
+
+</html>

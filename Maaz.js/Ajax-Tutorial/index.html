@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="height=device-height" />
+    <title>Ajax Tutorial</title>
+
+    <script type="text/javascript" src="http://127.0.0.1:5500/Ajax-Tutorial/js/function.js"></script>
+    <script src="http://127.0.0.1:5500/Ajax-Tutorial/js/BootstrapClone.js" defer type="text/javascript"></script>
+    <script src="http://127.0.0.1:5500/Ajax-Tutorial/js/sketch.js" defer type="text/javascript"></script>
+</head>
+
+<body class="col-gold bg-black">
+
+    <h1>This is an Ajax Tutorial</h1>
+    <button id="fetchBtn" class="col-gold bg-darkblue bord-1px_solid_white mx-20 fon-size-1_5vw cur-pointer">Fetch
+        Data</button>
+    <button id="backupBtn" class="col-gold bg-gray bord-1px_solid_white fon-size-1_5vw cur-pointer">Store Data</button>
+
+    <div id="responseDiv">
+        <textarea cols="60" rows="20" autocomplete="off" spellcheck="false" id="response" placeholder="JSON response's comin"
+            class="position-absolute top-20vh left-0 bord-4px_solid_green bgd_color-blanchedalmond col-red"></textarea>
+    </div>
+
+    <div id="responseHTMLDiv">
+        <textarea cols="60" rows="20" autocomplete="off" spellcheck="false" id="responseHTML" placeholder="HTML response's comin"
+            class="position-absolute top-20vh left-50vw bord-4px_solid_red bgd_color-yellow col-green"></textarea>
+    </div>
+
+    <div id="PostDiv">
+        <textarea cols="60" rows="20" autocomplete="off" spellcheck="false" id="Post" placeholder="JSON Post's comin"
+            class="position-absolute top-80vh left-25vw bord-4px_solid_red bgd_color-aqua col-brown"></textarea>
+    </div>
+
+    <style type="text/css">
+        #backupBtn {
+            width: 10vw;
+            height: 5vh;
+        }
+
+        #fetchBtn {
+            width: 10vw;
+            height: 5vh;
+        }
+
+        #responseDiv ::placeholder {
+            color: red;
+        }
+
+        #responseHTMLDiv ::placeholder {
+            color: red;
+        }
+
+        #PostDiv ::placeholder {
+            color: red;
+        }
+    </style>
+
+</body>
+
+</html>

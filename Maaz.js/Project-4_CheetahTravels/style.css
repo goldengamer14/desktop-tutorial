@@ -1,0 +1,84 @@
+body {
+    /* background-color: #f3f3f3; */
+    background-color: var(--bs-dark);
+    color: var(--bs-white);
+}
+
+nav {
+    background-color: #444;
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    overflow: hidden;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0vh 2vw;
+    position: relative;
+    color: #dd0;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+nav ul li:hover {
+    color: #fff;
+}
+
+.alert {
+    top: 63px;
+}
+
+#aboutUs {
+    position: absolute;
+    left: 100vw;
+    width: 100vw;
+    display: inline-block;
+}
+
+#aboutUs p {
+    height: fit-content;
+    width: 100vw;
+    position: relative;
+    left: 5vw;
+    background-color: var(--bs-highlight-bg);
+    font-family: var(--bs-font-monospace);
+}
+
+#aboutUs h3 {
+    height: fit-content;
+    width: 11vw;
+    position: relative;
+    left: 50%;
+    bottom: 5vh;
+}
+
+.container {
+    margin-top: 5vw;
+}
+
+#alert {
+    width: 99vw;
+    position: fixed;
+    top: 18vh;
+}
+
+.container .form-select option {
+    cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #000;
+}
+
+#description {
+    height: 40vh;
+}
+
+#submit {
+    position: relative;
+    left: 30vw;
+}
+
+.inputAlert {
+    display: block;
+}

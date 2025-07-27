@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+}
+
+#Clock {
+    background: url("H:/Maaz.js/Clock/Clock.jpg");
+    background-repeat: no-repeat;
+    background-size: 138%;
+
+    --wid: 65vw;
+    --hei: calc(var(--wid) - 1.5vw);
+
+    width: var(--wid);
+    height: var(--hei);
+
+    position: relative;
+
+    border: 2px solid black;
+}
+
+#Hour,
+#Minute,
+#Second {
+    background-color: black;
+    position: absolute;
+    left: 50.5%;
+    opacity: 70%;
+    transform-origin: bottom;
+}
+
+#Hour {
+    width: 1%;
+    height: 20%;
+    top: 28.5%;
+}
+
+#Minute {
+    width: 1%;
+    height: 25%;
+    top: 23.6%;
+}
+
+#Second {
+    width: 1%;
+    height: 30%;
+    top: 18.5%;
+}
