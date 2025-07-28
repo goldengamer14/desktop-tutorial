@@ -1,0 +1,374 @@
+Folder PATH listing for volume New Volume
+Volume serial number is 000000CF B81D:1E87
+D:\MAAZ-GIT_REPOSITORY
+³   .gitattributes
+³   .gitignore
+³   
+ÃÄÄÄ.vscode
+³       Boiler_Plate-C++.code-snippets
+³       c_cpp_properties.json
+³       launch.json
+³       settings.json
+³       tasks.json
+³       
+ÃÄÄÄLeet_Code_Solutions
+³   ÃÄÄÄLinked_List_Addition
+³   ³       Linked_List_Addition.c
+³   ³       
+³   ÃÄÄÄLongest_Substring
+³   ³   ÃÄÄÄC
+³   ³   ³       d.txt
+³   ³   ³       Longest_Substring.c
+³   ³   ³       Longest_Substring_Slide.c
+³   ³   ³       
+³   ³   ÃÄÄÄC++
+³   ³   ³       Longest_Substring.cpp
+³   ³   ³       Longest_Substring_opt.cpp
+³   ³   ³       problem.h
+³   ³   ³       
+³   ³   ÀÄÄÄJavascript
+³   ³           index.html
+³   ³           sketch.js
+³   ³           
+³   ÀÄÄÄMinimum_Difference_Array
+³       ÀÄÄÄC
+³               Minimum_Difference_Array.c
+³               
+ÃÄÄÄMaaz-C++
+³   ÃÄÄÄData_Structures
+³   ³   ÃÄÄÄCircular_Linked_List
+³   ³   ³       Circular_Linked_List.cpp
+³   ³   ³       
+³   ³   ÃÄÄÄDoubly_Linked_List
+³   ³   ³       Doubly_Linked_List.cpp
+³   ³   ³       
+³   ³   ÃÄÄÄInfix_Prefix_Postfix
+³   ³   ³       Infix_Prefix_Postfix.xlsx
+³   ³   ³       Infix_to_Postfix_Stack.cpp
+³   ³   ³       Linked_List.cpp
+³   ³   ³       Stack_Linked_List.cpp
+³   ³   ³       
+³   ³   ÃÄÄÄLinked_List
+³   ³   ³       Linked_List.cpp
+³   ³   ³       Linked_List_c.c
+³   ³   ³       Linked_List_type.c
+³   ³   ³       Runner.c
+³   ³   ³       
+³   ³   ÃÄÄÄParenthesis_Matching_Stack
+³   ³   ³       d.txt
+³   ³   ³       Linked_List.cpp
+³   ³   ³       Multiple_Parenthesis_Matching.cpp
+³   ³   ³       Parenthesis_Matching_Stack.cpp
+³   ³   ³       Stack_Linked_List.cpp
+³   ³   ³       
+³   ³   ÃÄÄÄQueue
+³   ³   ³       d.txt
+³   ³   ³       Double_Ended_Queue.cpp
+³   ³   ³       Double_Ended_Queue_c.c
+³   ³   ³       Double_Ended_Queue_type.h
+³   ³   ³       Linked_List.cpp
+³   ³   ³       Queue.cpp
+³   ³   ³       Queue_c.c
+³   ³   ³       Queue_Linked_List.cpp
+³   ³   ³       Queue_Linked_List_c.c
+³   ³   ³       Queue_type.c
+³   ³   ³       Runner_DE_Queue.c
+³   ³   ³       Runner_Queue.c
+³   ³   ³       
+³   ³   ÃÄÄÄStack
+³   ³   ³       Runner.c
+³   ³   ³       Stack.cpp
+³   ³   ³       Stack_c.c
+³   ³   ³       Stack_list.c
+³   ³   ³       
+³   ³   ÀÄÄÄStack_Linked_List
+³   ³           Linked_List.cpp
+³   ³           Stack_Linked_List.cpp
+³   ³           
+³   ÃÄÄÄDefine_in_C
+³   ³       define.c
+³   ³       
+³   ÃÄÄÄFile
+³   ³   ³   Create_File.c
+³   ³   ³   Delete_And_Rename_File.c
+³   ³   ³   Update_file.c
+³   ³   ³   
+³   ³   ÀÄÄÄPrototypes
+³   ³           Prototype.html
+³   ³           times.dat
+³   ³           
+³   ÃÄÄÄHashtag_Statements
+³   ³       Hashtag_Statements.c
+³   ³       
+³   ÃÄÄÄPlacement_New-Lower_Level_Memory_Manipulation
+³   ³       mkstemp.c
+³   ³       Optimization_Reuse.c
+³   ³       Placement_New.cpp
+³   ³       Union_Type_Punning.c
+³   ³       
+³   ÀÄÄÄProjects
+³       ÃÄÄÄIndependent_Variable
+³       ³       Independent_Variable.cpp
+³       ³       
+³       ÃÄÄÄSet_Last_Bytes
+³       ³       Runner.c
+³       ³       Set_Last_Bytes.h
+³       ³       
+³       ÃÄÄÄString_Linked_List
+³       ³       Linked_List.cpp
+³       ³       String_Linked_List.cpp
+³       ³       
+³       ÀÄÄÄStructure
+³               Runner.c
+³               Structure.h
+³               
+ÃÄÄÄMaaz-Python
+³   ³   Optimization_Techniques.py
+³   ³   Requests_BS4.py
+³   ³   scraping_book.py
+³   ³   
+³   ÀÄÄÄNumpy_Pandas_Basics
+³           numpy.ipynb
+³           pandas.ipynb
+³           
+ÀÄÄÄMaaz.js
+    ÃÄÄÄAjax-Tutorial
+    ³   ³   index.html
+    ³   ³   only.txt
+    ³   ³   
+    ³   ÀÄÄÄjs
+    ³       ³   BootstrapClone.js
+    ³       ³   function.js
+    ³       ³   sketch.js
+    ³       ³   
+    ³       ÀÄÄÄjson
+    ³               internet.json
+    ³               
+    ÃÄÄÄAnswers_To_StackOverflow
+    ³   ÀÄÄÄScroll_To_Top
+    ³           index.html
+    ³           sketch.js
+    ³           
+    ÃÄÄÄBootstrapClone
+    ³       Bootstrap.txt
+    ³       index.html
+    ³       sketch.js
+    ³       
+    ÃÄÄÄClock
+    ³       clock.jpg
+    ³       index.html
+    ³       sketch.js
+    ³       style.css
+    ³       
+    ÃÄÄÄFunctions
+    ³       index.html
+    ³       sketch.js
+    ³       style.css
+    ³       try.js
+    ³       
+    ÃÄÄÄList
+    ³       index.html
+    ³       sketch.js
+    ³       style.css
+    ³       
+    ÃÄÄÄProject-1_Notepad
+    ³       index.html
+    ³       loadingScreen.js
+    ³       sketch.js
+    ³       style.css
+    ³       waste.txt
+    ³       
+    ÃÄÄÄProject-2_CollegeLibrary
+    ³   ³   index.html
+    ³   ³   style.css
+    ³   ³   
+    ³   ÀÄÄÄjs
+    ³           BootstrapClone.js
+    ³           sketch.js
+    ³           
+    ÃÄÄÄProject-3_AajTakNews
+    ³   ³   index.html
+    ³   ³   style.css
+    ³   ³   
+    ³   ÀÄÄÄjs
+    ³           Bootstrap.js
+    ³           sketch.js
+    ³           
+    ÃÄÄÄProject-4_CheetahTravels
+    ³       index.html
+    ³       sketch.js
+    ³       style.css
+    ³       
+    ÃÄÄÄProject-5_CVScreener
+    ³       index.html
+    ³       sketch.js
+    ³       style.css
+    ³       
+    ÃÄÄÄProject-6_PostmanClone
+    ³       index.html
+    ³       sketch.js
+    ³       style.css
+    ³       
+    ÃÄÄÄProject-7_Calculator
+    ³       index.html
+    ³       sketch.js
+    ³       style.css
+    ³       
+    ÃÄÄÄReals
+    ³       index.html
+    ³       sketch.js
+    ³       sledge.js
+    ³       style.css
+    ³       
+    ÃÄÄÄStudent_Management
+    ³   ³   index.html
+    ³   ³   style.css
+    ³   ³   
+    ³   ÀÄÄÄjs
+    ³           functions.js
+    ³           sketch.js
+    ³           
+    ÃÄÄÄtexteditor.javascript
+    ³   ³   index.html
+    ³   ³   sketch.js
+    ³   ³   style.css
+    ³   ³   toAskQuestion.txt
+    ³   ³   
+    ³   ÀÄÄÄrunPage
+    ³           index.html
+    ³           
+    ÃÄÄÄTutorials
+    ³   ³   1-BootstrapClone.js
+    ³   ³   100Times.html
+    ³   ³   Arrays.html
+    ³   ³   asynchronousProgramming.html
+    ³   ³   classes.html
+    ³   ³   colorChanger.html
+    ³   ³   dateAndTime.html
+    ³   ³   DOM.html
+    ³   ³   DOM2.html
+    ³   ³   Events.html
+    ³   ³   Exercise-1.html
+    ³   ³   Exercise-2.html
+    ³   ³   Exercise-4.html
+    ³   ³   functions.html
+    ³   ³   importp5.html
+    ³   ³   loadingScreen.html
+    ³   ³   localStorage.html
+    ³   ³   looper.html
+    ³   ³   manipulationOfDOM.html
+    ³   ³   math.html
+    ³   ³   moreEvents.html
+    ³   ³   objectLiterals.html
+    ³   ³   objects.html
+    ³   ³   protoype&objectConstructor.html
+    ³   ³   randomPassword.html
+    ³   ³   shapes.html
+    ³   ³   StringLearn.html
+    ³   ³   webCrawler.html
+    ³   ³   wordFinder.html
+    ³   ³   
+    ³   ÃÄÄÄArrowFunctions
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       
+    ³   ÃÄÄÄAscendingAndDescendingSort
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       
+    ³   ÃÄÄÄAsync_Await
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       
+    ³   ÃÄÄÄCalculator_For_PC
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       
+    ³   ÃÄÄÄCSS_Color_Tutorial
+    ³   ³       index.html
+    ³   ³       style.css
+    ³   ³       
+    ³   ÃÄÄÄDestructuring
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       style.css
+    ³   ³       
+    ³   ÃÄÄÄDrag_And_Drop
+    ³   ³       image.jpg
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       style.css
+    ³   ³       
+    ³   ÃÄÄÄExercise-5
+    ³   ³       api.json
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       
+    ³   ÃÄÄÄExercise-6
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       style.css
+    ³   ³       
+    ³   ÃÄÄÄExercise-7_Digital-Clock
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       style.css
+    ³   ³       
+    ³   ÃÄÄÄFetchAPI
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       
+    ³   ÃÄÄÄforIn_vs_forOF_loop
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       style.css
+    ³   ³       
+    ³   ÃÄÄÄGenerators
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       style.css
+    ³   ³       
+    ³   ÃÄÄÄImportUsingXHR
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       
+    ³   ÃÄÄÄIterators
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       style.css
+    ³   ³       
+    ³   ÃÄÄÄMaps
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       style.css
+    ³   ³       
+    ³   ÃÄÄÄPromises
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       
+    ³   ÃÄÄÄRegular_Expressions
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       
+    ³   ÃÄÄÄSets
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       style.css
+    ³   ³       
+    ³   ÃÄÄÄSymbols
+    ³   ³       index.html
+    ³   ³       sketch.js
+    ³   ³       style.css
+    ³   ³       
+    ³   ÀÄÄÄTry_Catch
+    ³           index.html
+    ³           sketch.js
+    ³           
+    ÀÄÄÄwordFinder
+        ³   index.html
+        ³   wordFinder.txt
+        ³   
+        ÀÄÄÄjs
+                function.js
+                sketch.js
+                
