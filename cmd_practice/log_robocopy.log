@@ -1,104 +1,0 @@
-
--------------------------------------------------------------------------------
-   ROBOCOPY     ::     Robust File Copy for Windows                              
--------------------------------------------------------------------------------
-
-  Started : Monday, July 28, 2025 4:17:35 PM
-   Source : D:\Maaz-C++\
-     Dest : D:\Maaz-C++_copy\
-
-    Files : *.*
-	    
-  Options : *.* /S /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
-
-------------------------------------------------------------------------------
-
-	                   0	D:\Maaz-C++\
-	  New Dir          5	D:\Maaz-C++\.vscode\
-	    New File  		    1230	Boiler_Plate-C++.code-snippets100%  
-	    New File  		     362	c_cpp_properties.json100%  
-	    New File  		    3350	launch.json100%  
-	    New File  		    1539	settings.json100%  
-	    New File  		    2434	tasks.json100%  
-	  New Dir          0	D:\Maaz-C++\Data_Structures\
-	  New Dir          1	D:\Maaz-C++\Data_Structures\Circular_Linked_List\
-	    New File  		    6114	Circular_Linked_List.cpp100%  
-	  New Dir          1	D:\Maaz-C++\Data_Structures\Doubly_Linked_List\
-	    New File  		    7599	Doubly_Linked_List.cpp100%  
-	  New Dir          4	D:\Maaz-C++\Data_Structures\Infix_Prefix_Postfix\
-	    New File  		    9974	Infix_Prefix_Postfix.xlsx100%  
-	    New File  		    2567	Infix_to_Postfix_Stack.cpp100%  
-	    New File  		    4088	Linked_List.cpp100%  
-	    New File  		    2201	Stack_Linked_List.cpp100%  
-	  New Dir          4	D:\Maaz-C++\Data_Structures\Linked_List\
-	    New File  		    5777	Linked_List.cpp100%  
-	    New File  		    9056	Linked_List_c.c100%  
-	    New File  		   53346	Linked_List_type.c100%  
-	    New File  		    3972	Runner.c100%  
-	  New Dir          5	D:\Maaz-C++\Data_Structures\Parenthesis_Matching_Stack\
-	    New File  		     128	d.txt100%  
-	    New File  		    4088	Linked_List.cpp100%  
-	    New File  		    4157	Multiple_Parenthesis_Matching.cpp100%  
-	    New File  		    2415	Parenthesis_Matching_Stack.cpp100%  
-	    New File  		    2201	Stack_Linked_List.cpp100%  
-	  New Dir         12	D:\Maaz-C++\Data_Structures\Queue\
-	    New File  		    1426	d.txt100%  
-	    New File  		    3458	Double_Ended_Queue.cpp100%  
-	    New File  		    8916	Double_Ended_Queue_c.c100%  
-	    New File  		   25074	Double_Ended_Queue_type.h100%  
-	    New File  		    4443	Linked_List.cpp100%  
-	    New File  		    3809	Queue.cpp100%  
-	    New File  		    9460	Queue_c.c100%  
-	    New File  		    1540	Queue_Linked_List.cpp100%  
-	    New File  		    2844	Queue_Linked_List_c.c100%  
-	    New File  		   34681	Queue_type.c100%  
-	    New File  		    4145	Runner_DE_Queue.c100%  
-	    New File  		    5828	Runner_Queue.c100%  
-	  New Dir          4	D:\Maaz-C++\Data_Structures\Stack\
-	    New File  		    4355	Runner.c100%  
-	    New File  		    3570	Stack.cpp100%  
-	    New File  		    4010	Stack_c.c100%  
-	    New File  		   12767	Stack_list.c100%  
-	  New Dir          2	D:\Maaz-C++\Data_Structures\Stack_Linked_List\
-	    New File  		    3615	Linked_List.cpp100%  
-	    New File  		    3452	Stack_Linked_List.cpp100%  
-	  New Dir          1	D:\Maaz-C++\Define_in_C\
-	    New File  		    1070	define.c100%  
-	  New Dir          3	D:\Maaz-C++\File\
-	    New File  		     610	Create_File.c100%  
-	    New File  		    1842	Delete_And_Rename_File.c100%  
-	    New File  		    1887	Update_file.c100%  
-	  New Dir          0	D:\Maaz-C++\File\Prototypes\
-	  New Dir          1	D:\Maaz-C++\Hashtag_Statements\
-	    New File  		    1052	Hashtag_Statements.c100%  
-	  New Dir          4	D:\Maaz-C++\Placement_New-Lower_Level_Memory_Manipulation\
-	    New File  		     476	mkstemp.c100%  
-	    New File  		    2362	Optimization_Reuse.c100%  
-	    New File  		    1613	Placement_New.cpp100%  
-	    New File  		    1955	Union_Type_Punning.c100%  
-	  New Dir          0	D:\Maaz-C++\Projects\
-	  New Dir          1	D:\Maaz-C++\Projects\Independent_Variable\
-	    New File  		    3975	Independent_Variable.cpp100%  
-	  New Dir          2	D:\Maaz-C++\Projects\Set_Last_Bytes\
-	    New File  		     513	Runner.c100%  
-	    New File  		     218	Set_Last_Bytes.h100%  
-	  New Dir          2	D:\Maaz-C++\Projects\String_Linked_List\
-	    New File  		    4145	Linked_List.cpp100%  
-	    New File  		    4570	String_Linked_List.cpp100%  
-	  New Dir          2	D:\Maaz-C++\Projects\Structure\
-	    New File  		    1857	Runner.c100%  
-	    New File  		    1044	Structure.h100%  
-
-------------------------------------------------------------------------------
-
-               Total    Copied   Skipped  Mismatch    FAILED    Extras
-    Dirs :        21        20         1         0         0         0
-   Files :        54        54         0         0         0         0
-   Bytes :   286.3 k   286.3 k         0         0         0         0
-   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-
-
-   Speed :             5054827 Bytes/sec.
-   Speed :             289.239 MegaBytes/min.
-   Ended : Monday, July 28, 2025 4:17:35 PM
-
