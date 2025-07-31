@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-static int times = 0;
+int times = 0;
 
 int main()
 {
