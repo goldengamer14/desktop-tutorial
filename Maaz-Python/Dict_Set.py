@@ -78,12 +78,7 @@ def measure_set_creation_time(num_elements):
 
 
 # Execution of search time measurement
-while (
-    tuple_time == 0.000000
-    or list_time == 0.000000
-    or dict_time == 0.000000
-    or set_time == 0.000000
-):
+while True:
     the_list = range(0, max_num_iterations)
     the_tuple = tuple(ele for ele in the_list)  # tuple(the_list)
     the_dict = {ele: ele for ele in the_list}
@@ -95,6 +90,13 @@ while (
     set_time = measure_search_time(the_set, find_num)
     dict_time = measure_search_time(the_dict, find_num)
     max_num_iterations *= 10
+    if not (
+        tuple_time == 0.000000
+        or list_time == 0.000000
+        or dict_time == 0.000000
+        or set_time == 0.000000
+    ):
+        break
 
 print_results()
 
@@ -104,17 +106,19 @@ print("\n")
 max_num_iterations = 10**6
 
 # Execution of creation time measurement
-while (
-    tuple_time == 0.000000
-    or list_time == 0.000000
-    or dict_time == 0.000000
-    or set_time == 0.000000
-):
+while True:
     list_time = measure_list_creation_time(max_num_iterations)
     tuple_time = measure_tuple_creation_time(max_num_iterations)
     dict_time = measure_dict_creation_time(max_num_iterations)
     set_time = measure_set_creation_time(max_num_iterations)
     max_num_iterations *= 10
+    if not (
+        tuple_time == 0.000000
+        or list_time == 0.000000
+        or dict_time == 0.000000
+        or set_time == 0.000000
+    ):
+        break
 
 print_results()
 
