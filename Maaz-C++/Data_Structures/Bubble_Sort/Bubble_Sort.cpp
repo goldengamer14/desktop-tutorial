@@ -3,7 +3,7 @@
 using namespace std;
 
 template <class type>
-vector<type> Bubble_Sort_ascend(vector<type> &arr, unsigned int n)
+vector<type>& Bubble_Sort_ascend(vector<type> &arr, unsigned int n)
 {
     if (n > 1)
     {
