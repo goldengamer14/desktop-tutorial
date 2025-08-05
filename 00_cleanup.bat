@@ -5,33 +5,27 @@ if exist ".gitignore" (
         set "var=%%l"
         if not "!var:*=%!"=="!var!" (
             set "var=!var:/=\!"
-            del /s /f /q "!var!"
+            del /s /f /q "!var!" 2 > nul
             echo Deleted all files matching %%l as !var!
-            rd /s /q "!var!"
+            rd /s /q "!var!" 2 > nul
             echo Deleted directory matching %%l as !var!
-        )
-        endlocal
-        else (
+        ) else (
             if exist %%l (
                 echo Deleting %%l
                 set "var=%%l"
-                setlocal enabledelayedexpansion
                 set "var=!var:/=\!"
                 echo !var!
-                del /s /f /q "!var!"
-                endlocal
+                del /s /f /q "!var!" 2 > nul
             )
             if exist %%l (
                 echo Deleting directory %%l
                 set "var=%%l"
-                setlocal enabledelayedexpansion
                 set "var=!var:/=\!"
                 echo !var!
-                rmdir /s /q "!var!"
-                endlocal
+                rd /s /q "!var!" 2 > nul
             )
-        @REM endlocal
         )
+        endlocal
         echo.
     )
 ) else (
