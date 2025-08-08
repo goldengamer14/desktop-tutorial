@@ -7,98 +7,134 @@
 bool equalFrequency(char *word)
 {
     unsigned char letter_frequency[26] = {0};
-    unsigned char freq_freq[9] = {0};
-
     for (word; *word != '\0'; word++)
-        letter_frequency[(*word) - 'a']++;
+        letter_frequency[(int)(*word - 'a')]++;
 
-    for (unsigned char i = 0; i < 26; i++)
-        if (letter_frequency[i] > 0)
-            freq_freq[letter_frequency[i]]++;
+    // for (unsigned char i = 0; i < 26; i++)
+    //     printf("letter_frequency[i=%hhu] = %hhu\n", i, letter_frequency[i]);
 
-    signed char unequal;
-    signed char atleast_once = 0;
-    // signed char all_equal_and_1 = 1;
-    for (unsigned char i = 0; i < 9; i++)
+    signed char unequal = 0;
+    unsigned char i = 0;
+    // for (unsigned char i = 0; i < 26; i++)
+    while (i < 26)
     {
-        if (freq_freq[i] != 0)
+        if (i >= 26)
+            break;
+        while (i < 26 && letter_frequency[i] == 0)
         {
-            unequal = 0;
-            unsigned char compare, j = 0;
-            if (freq_freq[i] == 1)
+            i++;
+            continue;
+        }
+        if (i >= 26)
+            break;
+
+        unequal = 0;
+        unsigned char compare;
+        unsigned char j = 0;
+        if (letter_frequency[i] == 1)
+        {
+            while (j < 26 && (j == i || letter_frequency[j] == 0))
+                j++;
+
+            if (j >= 26 || j == i)
             {
-                while (freq_freq[j] == 0 || j == i)
-                    j++;
-                compare = freq_freq[j];
+                // printf("j exceeded 26 or is equal to i as %hhu\n", j);
+                // compare = letter_frequency[i];
+                return 1;
             }
             else
-                compare = freq_freq[i] - 1;
-            // printf("compare initialized to %hhu; freq_freq[i=%hhu] = %hhu; "
-            //        "freq_freq[j=%hhu] = %hhu\n",
-            //        compare, i, freq_freq[i], j, freq_freq[j]);
-
-            for (j; j < 9; j++)
-                if (freq_freq[j] != 0 && j != i)
-                {
-                    atleast_once = 1;
-
-                    // printf("freq_freq[%hhu] = %hhu; freq_freq[%hhu] = %hhu; "
-                    //        "unequal = %hhu; atleast_once = %hhu;\n",
-                    //        i, freq_freq[i], j, freq_freq[j], unequal,
-                    //        atleast_once);
-                    if (compare != freq_freq[j])
-                    {
-                        // if (freq_freq[i] != freq_freq[j] || j > 2 || (j == 2
-                        // && freq_freq[2] > 1))
-                        //     all_equal_and_1 = 0;
-                        unequal = 1;
-                        // printf("inequality at: compare = %hhu; "
-                        //        "freq_freq[i=%hhu] = %hhu;"
-                        //        " freq_freq[j=%hhu] = %hhu;\n",
-                        //        compare, i, freq_freq[i], j, freq_freq[j]);
-                        break;
-                        // i++;
-                        // if (i < 9) {
-                        //     j = 0;
-                        //     // break;
-                        // } else {
-                        //     for (unsigned char k = 0; k < 9; k++)
-                        //         printf("freq_freq[%hhu] = %hhu\n", k,
-                        //                freq_freq[k]);
-                        //     printf("Returned at line 54 because unequal = "
-                        //            "%hhu; i = %hhu; j = %hhu;\n",
-                        //            unequal, i, j);
-                        //     // if (all_equal_and_1)
-                        //     //     return 1;
-                        //     return !unequal;
-                        // }
-                    }
-                    // if (all_equal_and_1)
-                    //     return 1;
-                    if (!unequal)
-                    {
-                        // for (unsigned char i = 0; i < 9; i++)
-                        //     printf("freq_freq[%hhu] = %hhu\n", i, freq_freq[i]);
-                        // printf("Returned at line 58 because: compare = %hhu; "
-                        //        "freq_freq[i=%hhu] = %hhu; freq_freq[j=%hhu] = "
-                        //        "%hhu;\n",
-                        //        compare, i, freq_freq[i], j, freq_freq[j]);
-                        return !unequal;
-                    }
-                }
+                compare = letter_frequency[j];
         }
+        else
+            compare = letter_frequency[i] - 1;
+
+        // printf("Outer Loop 1:\n\tcompare = %hhu; letter_frequency[i=%hhu] = %hhu; letter_frequency[j=%hhu] = "
+        //        "%hhu; unequal = %hhi\n",
+        //        compare, i, letter_frequency[i], j, j < 26 ? letter_frequency[j] : 0, unequal);
+
+        // printf("\nInner Loop:\n");
+
+        j = 0;
+        while (j < 26)
+        {
+            if (j >= 26)
+                break;
+            while (j < 26 && letter_frequency[j] == 0)
+            {
+                j++;
+                continue;
+            }
+            if (j >= 26)
+                break;
+
+            unequal = 0;
+
+            if (j != i && compare != letter_frequency[j])
+            {
+                unequal = 1;
+                break;
+            }
+            // printf("\tcompare = %hhu; letter_frequency[j=%hhu] = %hhu;"
+            //        "unequal "
+            //        "= %hhi\n",
+            //        compare, j, j < 26 ? letter_frequency[j] : 0, unequal);
+            j++;
+        }
+
+        // printf("\nOuter Loop 2:\n\tcompare = %hhu; letter_frequency[j=%hhu] = "
+        //        "%hhu; unequal = %hhi\n",
+        //        compare, j, j < 26 ? letter_frequency[j] : 0, unequal);
+
+        if (!unequal)
+        {
+            // printf("\n\nReturned inside the loop\n");
+            return 1;
+        }
+
+        i++;
     }
 
-    // for (unsigned char i = 0; i < 9; i++)
-        // printf("freq_freq[%hhu] = %hhu\n", i, freq_freq[i]);
-    // printf("unequal = %hhu; atleast_once = %hhu\n", unequal, atleast_once);
+    // printf("\n\nReturned at the end\n");
+    return 0;
+}
 
-    // if (atleast_once && all_equal_and_1)
-    //     return 1;
-    if (atleast_once || freq_freq[1])
-    {
-        // printf("Returned at line 83 because unequal = %hhu", unequal);
-        return !unequal;
-    }
+int main()
+{
+    char str[200];
+    printf("\n\n");
+    fflush(stdout);
+
+    strcpy(str, "abcc");
+    printf("equalFrequency(%s) = %hhi\n\n", str, equalFrequency(str));
+
+    strcpy(str, "aazz");
+    printf("equalFrequency(%s) = %hhi\n\n", str, equalFrequency(str));
+
+    strcpy(str, "bac");
+    printf("equalFrequency(%s) = %hhi\n\n", str, equalFrequency(str));
+
+    strcpy(str, "abbcc");
+    printf("equalFrequency(%s) = %hhi\n\n", str, equalFrequency(str));
+
+    strcpy(str, "ddaccb");
+    printf("equalFrequency(%s) = %hhi\n\n", str, equalFrequency(str));
+
+    strcpy(str, "aca");
+    printf("equalFrequency(%s) = %hhi\n\n", str, equalFrequency(str));
+
+    strcpy(str, "acbda");
+    printf("equalFrequency(%s) = %hhi\n\n", str, equalFrequency(str));
+
+    strcpy(str, "cbccca");
+    printf("equalFrequency(%s) = %hhi\n\n", str, equalFrequency(str));
+
+    strcpy(str, "cccd");
+    printf("equalFrequency(%s) = %hhi\n\n", str, equalFrequency(str));
+
+    strcpy(str, "xxvbv");
+    printf("equalFrequency(%s) = %hhi\n\n", str, equalFrequency(str));
+
+    printf("\n");
+
     return 0;
 }
