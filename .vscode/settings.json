@@ -50,7 +50,9 @@
         "string.h": "c",
         "crtdefs.h": "c",
         "corecrt.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "bubble_sort.h": "c",
+        "stdio.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.default.compilerPath": "D:/msys2/ucrt64/bin/g++.exe"
