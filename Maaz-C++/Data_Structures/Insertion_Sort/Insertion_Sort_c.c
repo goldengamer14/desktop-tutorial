@@ -1,18 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "Insertion_Sort.h"
 
-#define Insertion_Sort_Ascend(type)                                          \
-    type *Insert_Sort_ascend_##type(type *arr, type data, unsigned int n) \
-    {                                                                \
-        while (n > 0 && arr[n - 1] > data)                           \
-        {                                                            \
-            arr[n] = arr[n - 1];                                     \
-            n--;                                                     \
-        }                                                            \
-        arr[n] = data;                                               \
-        return arr;                                                  \
-    }
+// #define Insertion_Sort_Ascend(type)                                          \
+//     type *Insert_Sort_ascend_##type(type *arr, type data, unsigned int n) \
+//     {                                                                \
+//         while (n > 0 && arr[n - 1] > data)                           \
+//         {                                                            \
+//             arr[n] = arr[n - 1];                                     \
+//             n--;                                                     \
+//         }                                                            \
+//         arr[n] = data;                                               \
+//         return arr;                                                  \
+//     }
 
 Insertion_Sort_Ascend(int)
     Insertion_Sort_Ascend(float)
