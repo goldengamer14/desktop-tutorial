@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="sketch.js" defer></script>
+</head>
+
+<body>
+    <h1 id="user-header">Current User: </h1>
+
+    <div class="section">
+        <h2>Create Account</h2>
+        <input type="text" id="user-id" placeholder="User ID">
+        <input type="number" id="initial-deposit" placeholder="initial deposit">
+        <button id="create-account">Create</button>
+        <small class="error" id="creation-error"></small>
+    </div>
+
+    <div class="section">
+        <h2>Switch Account</h2>
+        <input type="text" id="change-id" placeholder="New ID">
+        <button id="switch-id">Switch Account</button>
+        <small class="error" id="switch-error"></small>
+    </div>
+
+    <div class="section">
+        <h2>Deposit / Withdraw</h2>
+        <input type="number" id="deposit-withdraw" placeholder="amount">
+        <button id="deposit">Deposit</button>
+        <button id="withdraw">Withdraw</button>
+        <small class="error" id="deposit-withdrawal-error"></small>
+    </div>
+
+    <div class="section">
+        <h2>Buy / Sell Shares</h2>
+        <!-- <input type="text" id="company" placeholder="AAPL, GOOGL, TSLA"> -->
+        <select id="company">
+            <option value="None">--None--</option>
+            <option value="AAPL">AAPL</option>
+            <option value="TSLA">TSLA</option>
+            <option value="GOOGL">GOOGL</option>
+        </select>
+
+        <input type="number" id="share-quantity" placeholder="quantity">
+        <button id="buy-shares">Buy</button>
+        <button id="sell-shares">Sell</button>
+        <small class="error" id="buy-sell-error"></small>
+    </div>
+
+    <div class="section">
+        <h2>Check Portfolio</h2>
+        <button id="show-portfolio">Show Portfolio</button>
+        <button id="show-transactions">Show Transaction History</button>
+        <button id="remove-account">Remove Account</button>
+
+        <small class="error" id="removal-error"></small>
+
+        <div id="output-section" class="section">
+            <h3 id="portfolio-header">Portfolio:</h3>
+            <div id="portfolio-output"></div>
+
+            <h3 id="transaction-header">Transaction History:</h3>
+            <div id="transaction-output"></div>
+        </div>
+    </div>
+</body>
+
+</html>

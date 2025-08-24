@@ -1,0 +1,68 @@
+body {
+    background: #212121;
+    color: #ececec;
+
+    font-family: sans-serif;
+
+    max-width: max-content;
+
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.section {
+    border: 2px solid #ececec;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+input,
+button,
+select {
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 2px solid hsl(0, 5%, 50%);
+}
+
+input,
+select {
+    background: #424242;
+    color: #ececec;
+}
+
+button {
+    background: #ececec;
+    color: #212112;
+    cursor: pointer;
+    border-radius: 20%;
+    min-width: 4rem;
+}
+
+#output-section{
+    display: none;
+    margin: 0px;
+    text-align: start;
+}
+
+#portfolio-header, #transaction-header {
+    display: none;
+}
+
+h2 {
+    margin-top: 0px;
+    margin-left: 1rem;
+}
+
+h1 {
+    display: contents;
+}
+
+.error {
+    display: none;
+    color: #f33;
+    margin: 0rem 1rem;
+}
+
+#user-header {
+    margin: auto 20vw;
+}
