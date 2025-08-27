@@ -189,17 +189,20 @@ def Generate_PCM_Marks(numbers):
     return data_table
 
 
-# data_table = Generate_Results(20)
-# data_table = Generate_Finance_List(15)
-# data_table = Generate_Dates(20)
-# data_table = Generate_Names_With_Nationality(30)
-# data_table = Generate_PCM_Marks(10)
-data_table = Generate_PCM_Marks(100)
-data_table_csv = Generate_PCM_Marks(100)
+if __name__ == "__main__":
+    # data_table = Generate_Results(20)
+    # data_table = Generate_Finance_List(15)
+    # data_table = Generate_Dates(20)
+    # data_table = Generate_Names_With_Nationality(30)
+    # data_table = Generate_PCM_Marks(10)
+    data_table = Generate_PCM_Marks(100)
+    data_table_csv = Generate_PCM_Marks(100)
 
-# Export to Excel
-data_table.to_excel("Maaz-Python\\Data_Generator\\Generated_Data.xlsx", index=False)
-data_table_csv.to_csv("Maaz-Python\\Data_Generator\\Generated_Data.csv", index=False)
+    # Export to Excel
+    data_table.to_excel("Maaz-Python\\Data_Generator\\Generated_Data.xlsx", index=False)
+    data_table_csv.to_csv(
+        "Maaz-Python\\Data_Generator\\Generated_Data.csv", index=False
+    )
 
 """
     # Sn[0->89](sin(n)) = 1;

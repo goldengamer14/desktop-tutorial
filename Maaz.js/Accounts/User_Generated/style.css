@@ -38,14 +38,33 @@ button {
     min-width: 4rem;
 }
 
-#output-section{
+#output-section {
     display: none;
     margin: 0px;
     text-align: start;
 }
 
-#portfolio-header, #transaction-header {
+#portfolio-header,
+#transaction-header {
     display: none;
+}
+
+#collapse-portfolio,
+#collapse-transactions,
+#collapse-output {
+    display: none;
+}
+
+#collapse-transactions {
+    margin-left: 34%;
+}
+
+#collapse-output {
+    margin-left: 38%;
+}
+
+#collapse-portfolio {
+    margin-left: 37%;
 }
 
 h2 {

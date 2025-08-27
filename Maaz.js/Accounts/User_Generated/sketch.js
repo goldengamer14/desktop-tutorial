@@ -10,7 +10,9 @@ const transactionHeader = document.getElementById("transaction-header");
 const transactionOutput = document.getElementById("transaction-output");
 const portfolioHeader = document.getElementById("portfolio-header");
 const portfolioOutput = document.getElementById("portfolio-output");
-
+const collapsePortfolio = document.getElementById("collapse-portfolio");
+const collapseTransactions = document.getElementById("collapse-transactions");
+const collapseOutput = document.getElementById("collapse-output");
 
 const portfolios = JSON.parse(localStorage.getItem("Account Portfolios")) ?? {};
 const userHeader = document.getElementById("user-header");
@@ -28,7 +30,13 @@ document.getElementById("show-transactions").addEventListener("click", showTrans
 document.getElementById("show-portfolio").addEventListener("click", showPortfolio);
 document.getElementById("remove-account").addEventListener("click", removeAccount);
 document.getElementById("switch-id").addEventListener("click", switchAccount);
-
+document.getElementById("collapse-portfolio").addEventListener("click", collapsePortfolioOutput);
+document.getElementById("collapse-transactions").addEventListener("click", collapseTransactionOutput);
+document.getElementById("collapse-output").addEventListener("click", () => {
+    collapsePortfolioOutput();
+    collapseTransactionOutput();
+    outputSection.style.display = "none";
+});
 
 // Account Handler Functions
 function createAccount() {
@@ -59,122 +67,8 @@ function createAccount() {
     localStorage.setItem("Current User", currentId);
 
     userHeader.innerHTML = `Current User: ${currentId}`;
-}
 
-function deposit() {
-    this.error = document.getElementById("deposit-withdrawal-error");
-    const currentId = localStorage.getItem("Current User");
-    const currentAmount = Number.parseFloat(depositWithdrawAmount.value);
-
-    if (!portfolios[currentId]) {
-        throwError(this.error, "Create an account first to deposit into it");
-        return;
-    }
-    // else if (!currentAmount) {
-    //     throwError(this.error, "Enter the amount to be deposited");
-    //     return;
-    // } 
-    else if (currentAmount <= 0) {
-        throwError(this.error, "The amount to be deposited must be more than 0");
-        return;
-    } else
-        resetError(this.error);
-
-    portfolios[currentId].currentAmount += currentAmount;
-    portfolios[currentId].transactions.push({ action: "deposit", amount: currentAmount });
-
-    localStorage.setItem("Account Portfolios", JSON.stringify(portfolios));
-}
-
-function withdraw() {
-    this.error = document.getElementById("deposit-withdrawal-error");
-    const currentId = localStorage.getItem("Current User");
-    const currentAmount = Number.parseFloat(depositWithdrawAmount.value);
-
-    if (!portfolios[currentId]) {
-        throwError(this.error, "Create an account first to withdraw from it");
-        return;
-    }
-    // else if (!currentAmount) {
-    //     throwError(this.error, "Enter the amount to be withdrawn");
-    //     return;
-    // }
-    else if (currentAmount <= 0) {
-        throwError(this.error, "The amount to be withdrawn must be more than 0");
-        return;
-    } else if (currentAmount > portfolios[currentId].currentAmount) {
-        throwError(this.error, "Your account does not contain enough wealth");
-        return;
-    } else
-        resetError(this.error);
-
-    portfolios[currentId].currentAmount -= currentAmount;
-    portfolios[currentId].transactions.push({ action: "withdraw", amount: currentAmount });
-
-    localStorage.setItem("Account Portfolios", JSON.stringify(portfolios));
-}
-
-function buyShares() {
-    this.error = document.getElementById("buy-sell-error");
-    const currentId = localStorage.getItem("Current User");
-    const currentCompany = company.value;
-    const quantity = Number.parseInt(shareQuantity.value);
-
-    if (!portfolios[currentId]) {
-        throwError(this.error, "Create an account first to buy shares");
-        return;
-    } else if (quantity <= 0) {
-        throwError(this.error, "The quantity of shares to be bought must be more than 0");
-        return;
-    } else if (companies[currentCompany] == "None") {
-        throwError(this.error, "Select a company to proceed");
-        return;
-    } else if (quantity * companies[currentCompany] > portfolios[currentId].currentAmount) {
-        throwError(this.error, "Your account does not contain enough wealth");
-        return;
-    } else
-        resetError(this.error);
-
-    portfolios[currentId].currentAmount -= quantity * companies[currentCompany];
-    portfolios[currentId].transactions.push({
-        action: "Buy Shares", company: currentCompany,
-        quantity: quantity, amount: quantity * companies[currentCompany]
-    });
-    portfolios[currentId].heldShares[currentCompany] ? portfolios[currentId].heldShares[currentCompany] += quantity
-        : portfolios[currentId].heldShares[currentCompany] = quantity;
-
-    localStorage.setItem("Account Portfolios", JSON.stringify(portfolios));
-}
-
-function sellShares() {
-    this.error = document.getElementById("buy-sell-error");
-    const currentId = localStorage.getItem("Current User");
-    const currentCompany = company.value;
-    const quantity = Number.parseInt(shareQuantity.value);
-
-    if (!portfolios[currentId]) {
-        throwError(this.error, "Create an account first to sell shares");
-        return;
-    } else if (quantity <= 0) {
-        throwError(this.error, "The quantity of shares to be sold must be more than 0");
-        return;
-    } else if (companies[currentCompany] == "None") {
-        throwError(this.error, "Select a company to proceed");
-        return;
-    } else if (!portfolios[currentId].heldShares[currentCompany] || quantity > portfolios[currentId].heldShares[currentCompany]) {
-        throwError(this.error, "You don't possess enough shares to sell");
-        return;
-    } else
-        resetError(this.error);
-
-    portfolios[currentId].currentAmount += quantity * companies[currentCompany];
-    portfolios[currentId].transactions.push({
-        action: "Sell Shares", company: currentCompany,
-        quantity: quantity, amount: quantity * companies[currentCompany]
-    });
-    portfolios[currentId].heldShares[currentCompany] -= quantity;
-
-    localStorage.setItem("Account Portfolios", JSON.stringify(portfolios));
+    initialDeposit.value = userId.value = "";
 }
 
 function showTransactions() {
@@ -210,6 +104,7 @@ function showTransactions() {
     console.log(currentAccount.transactions);
     outputSection.style.display = transactionHeader.style.display = "block";
 
+    collapseTransactions.style.display = collapseOutput.style.display = "block";
 }
 
 function showPortfolio() {
@@ -242,6 +137,152 @@ function showPortfolio() {
     console.log(logAccount);
 
     outputSection.style.display = portfolioHeader.style.display = "block";
+
+    collapsePortfolio.style.display = collapseOutput.style.display = "block";
+}
+
+function collapsePortfolioOutput() {
+    portfolioOutput.innerHTML = "";
+    collapsePortfolio.style.display = portfolioHeader.style.display = "none";
+}
+
+function collapseTransactionOutput() {
+    transactionOutput.innerHTML = "";
+    collapseTransactions.style.display = transactionHeader.style.display = "none";
+}
+
+function deposit() {
+    this.error = document.getElementById("deposit-withdrawal-error");
+    const currentId = localStorage.getItem("Current User");
+    const currentAmount = Number.parseFloat(depositWithdrawAmount.value);
+
+    if (!portfolios[currentId]) {
+        throwError(this.error, "Create an account first to deposit into it");
+        return;
+    }
+    // else if (!currentAmount) {
+    //     throwError(this.error, "Enter the amount to be deposited");
+    //     return;
+    // } 
+    else if (currentAmount <= 0) {
+        throwError(this.error, "The amount to be deposited must be more than 0");
+        return;
+    } else
+        resetError(this.error);
+
+    portfolios[currentId].currentAmount += currentAmount;
+    portfolios[currentId].transactions.push({ action: "deposit", amount: currentAmount });
+
+    localStorage.setItem("Account Portfolios", JSON.stringify(portfolios));
+
+    depositWithdrawAmount.value = "";
+
+    if (portfolioOutput.innerHTML) showPortfolio();
+    if (transactionOutput.innerHTML) showTransactions();
+}
+
+function withdraw() {
+    this.error = document.getElementById("deposit-withdrawal-error");
+    const currentId = localStorage.getItem("Current User");
+    const currentAmount = Number.parseFloat(depositWithdrawAmount.value);
+
+    if (!portfolios[currentId]) {
+        throwError(this.error, "Create an account first to withdraw from it");
+        return;
+    }
+    else if (currentAmount <= 0) {
+        throwError(this.error, "The amount to be withdrawn must be more than 0");
+        return;
+    } else if (currentAmount > portfolios[currentId].currentAmount) {
+        throwError(this.error, "Your account does not contain enough wealth");
+        return;
+    } else
+        resetError(this.error);
+
+    portfolios[currentId].currentAmount -= currentAmount;
+    portfolios[currentId].transactions.push({ action: "withdraw", amount: currentAmount });
+
+    localStorage.setItem("Account Portfolios", JSON.stringify(portfolios));
+
+    depositWithdrawAmount.value = "";
+
+    if (portfolioOutput.innerHTML) showPortfolio();
+    if (transactionOutput.innerHTML) showTransactions();
+}
+
+function buyShares() {
+    this.error = document.getElementById("buy-sell-error");
+    const currentId = localStorage.getItem("Current User");
+    const currentCompany = company.value;
+    const quantity = Number.parseInt(shareQuantity.value);
+
+    if (!portfolios[currentId]) {
+        throwError(this.error, "Create an account first to buy shares");
+        return;
+    } else if (quantity <= 0) {
+        throwError(this.error, "The quantity of shares to be bought must be more than 0");
+        return;
+    } else if (companies[currentCompany] == "None") {
+        throwError(this.error, "Select a company to proceed");
+        return;
+    } else if (quantity * companies[currentCompany] > portfolios[currentId].currentAmount) {
+        throwError(this.error, "Your account does not contain enough wealth");
+        return;
+    } else
+        resetError(this.error);
+
+    portfolios[currentId].currentAmount -= quantity * companies[currentCompany];
+    portfolios[currentId].transactions.push({
+        action: "Buy Shares", company: currentCompany,
+        quantity: quantity, amount: quantity * companies[currentCompany]
+    });
+    portfolios[currentId].heldShares[currentCompany] ? portfolios[currentId].heldShares[currentCompany] += quantity
+        : portfolios[currentId].heldShares[currentCompany] = quantity;
+
+    localStorage.setItem("Account Portfolios", JSON.stringify(portfolios));
+
+    company.firstElementChild.selected = true;
+    shareQuantity.value = "";
+
+    if (portfolioOutput.innerHTML) showPortfolio();
+    if (transactionOutput.innerHTML) showTransactions();
+}
+
+function sellShares() {
+    this.error = document.getElementById("buy-sell-error");
+    const currentId = localStorage.getItem("Current User");
+    const currentCompany = company.value;
+    const quantity = Number.parseInt(shareQuantity.value);
+
+    if (!portfolios[currentId]) {
+        throwError(this.error, "Create an account first to sell shares");
+        return;
+    } else if (quantity <= 0) {
+        throwError(this.error, "The quantity of shares to be sold must be more than 0");
+        return;
+    } else if (companies[currentCompany] == "None") {
+        throwError(this.error, "Select a company to proceed");
+        return;
+    } else if (!portfolios[currentId].heldShares[currentCompany] || quantity > portfolios[currentId].heldShares[currentCompany]) {
+        throwError(this.error, "You don't possess enough shares to sell");
+        return;
+    } else
+        resetError(this.error);
+
+    portfolios[currentId].currentAmount += quantity * companies[currentCompany];
+    portfolios[currentId].transactions.push({
+        action: "Sell Shares", company: currentCompany,
+        quantity: quantity, amount: quantity * companies[currentCompany]
+    });
+    portfolios[currentId].heldShares[currentCompany] -= quantity;
+
+    localStorage.setItem("Account Portfolios", JSON.stringify(portfolios));
+
+    company.firstElementChild.selected = true;
+    shareQuantity.value = "";
+
+    if (portfolioOutput.innerHTML) showPortfolio();
+    if (transactionOutput.innerHTML) showTransactions();
 }
 
 function removeAccount() {
@@ -283,6 +324,11 @@ function switchAccount() {
 
     localStorage.setItem("Current User", switchId);
     userHeader.innerHTML = `Current User: ${switchId}`;
+
+    changeId.value = "";
+
+    if (portfolioOutput.innerHTML) showPortfolio();
+    if (transactionOutput.innerHTML) showTransactions();
 }
 
 // Error Handlers
