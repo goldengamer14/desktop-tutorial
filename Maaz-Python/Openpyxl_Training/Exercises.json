@@ -1,0 +1,290 @@
+{
+    "Day 1": {
+        "type": "(Lower Overload)",
+        "Squat (Strength)": {
+            "Sets": "1",
+            "Reps": "6",
+            "Weight": "117kg"
+        },
+        "Leg Press": {
+            "Sets": "3",
+            "Reps": "6",
+            "Weight": "107kg"
+        },
+        "Bulgarian Split Squats": {
+            "Sets": "2",
+            "Reps": "",
+            "Weight": "10kg KB"
+        },
+        "Leg Extensions": {
+            "Sets": "3",
+            "Reps": "15",
+            "Weight": "12 plates"
+        },
+        "Leg Curl Tempo(controlled)": {
+            "Sets": "3",
+            "Reps": "12",
+            "Weight": "13 plates"
+        },
+        "Seated Calf Raises": {
+            "Sets": "4",
+            "Reps": "",
+            "Weight": "45kg"
+        }
+    },
+    "Day 2": {
+        "type": "(Chest & Triceps Hypertrophy)",
+        "Tempo+Pause Bench Press": {
+            "Sets": "2",
+            "Reps": "10-12",
+            "Weight": "37kg"
+        },
+        "DB Incline Bench Press": {
+            "Sets": "2",
+            "Reps": "10-12",
+            "Weight": "15x20x30kg"
+        },
+        "Barbell Decline Press": {
+            "Sets": "2",
+            "Reps": "10-12",
+            "Weight": "37kg"
+        },
+        "Cable Fly": {
+            "Sets": "3",
+            "Reps": "12-15",
+            "Weight": "5x6x7 plates"
+        },
+        "Push-ups": {
+            "Sets": "1",
+            "Reps": "armrap",
+            "Weight": "Bodyweight"
+        },
+        "Tricep Rope overhead Extension": {
+            "Sets": "3",
+            "Reps": "10-12",
+            "Weight": "8 plates"
+        },
+        "Triceps Pushdowns": {
+            "Sets": "3",
+            "Reps": "10-12",
+            "Weight": "8 plates"
+        },
+        "Cable Kickback": {
+            "Sets": "2",
+            "Reps": "10-12",
+            "Weight": "2 plates"
+        },
+        "Eugene Extensions for Forearms": {
+            "Sets": "1",
+            "Reps": "12-20",
+            "Weight": "7 plates"
+        },
+        "Fist Knuckle Pushups": {
+            "Sets": "1",
+            "Reps": "15-20",
+            "Weight": "Bodyweight"
+        },
+        "Machine Pronated curls": {
+            "Sets": "1",
+            "Reps": "6-10",
+            "Weight": "6 plates"
+        }
+    },
+    "Day 3": {
+        "type": "(Deadlift & Back Hypertrophy)",
+        "Deadlift": {
+            "Sets": "1",
+            "Reps": "6",
+            "Weight": "117kg"
+        },
+        "Barbell Rows": {
+            "Sets": "3",
+            "Reps": "10-12",
+            "Weight": "77kg"
+        },
+        "Face Pull w. External Rotation": {
+            "Sets": "2",
+            "Reps": "15-20",
+            "Weight": "80kg"
+        },
+        "Barbell Shrugs": {
+            "Sets": "4",
+            "Reps": "10-12",
+            "Weight": "87kg"
+        },
+        "Hyperextension": {
+            "Sets": "2",
+            "Reps": "armrap",
+            "Weight": "barbell"
+        },
+        "Good Morning": {
+            "Sets": "2",
+            "Reps": "armrap",
+            "Weight": "barbell"
+        },
+        "Leg Raises": {
+            "Sets": "2",
+            "Reps": "10-12",
+            "Weight": "Bodyweight"
+        }
+    },
+    "Day 4": {
+        "type": "Delt & Biceps Hypertrophy",
+        "BB OHP": {
+            "Sets": "3",
+            "Reps": "10-12",
+            "Weight": "47kg"
+        },
+        "Lateral Raise w. DBs": {
+            "Sets": "3",
+            "Reps": "12-15",
+            "Weight": "9 plates"
+        },
+        "Reverse fly (Pec deck Machine)": {
+            "Sets": "3",
+            "Reps": "12-14",
+            "Weight": "9 plates"
+        },
+        "DB Bent over Lateral Raise (Seated)": {
+            "Sets": "2",
+            "Reps": "15",
+            "Weight": "7.5kg"
+        },
+        "EZ Bar curl": {
+            "Sets": "2",
+            "Reps": "10-12",
+            "Weight": "30kg"
+        },
+        "Bayesian Curls (high pins)": {
+            "Sets": "3",
+            "Reps": "12-14",
+            "Weight": "4 plates"
+        },
+        "Preacher Curls": {
+            "Sets": "3",
+            "Reps": "10-12",
+            "Weight": "30kg"
+        },
+        "Eugene Extensions for Forearms": {
+            "Sets": "1",
+            "Reps": "12-20",
+            "Weight": "6 plates"
+        },
+        "Fist Knuckle Pushups": {
+            "Sets": "1",
+            "Reps": "15-20",
+            "Weight": "Bodyweight"
+        },
+        "Machine Pronated Curls": {
+            "Sets": "1",
+            "Reps": "6-10",
+            "Weight": "6 plates"
+        }
+    },
+    "DAY 5": {
+        "type": "Lower Hypertrophy",
+        "Heels Elevated Squats": {
+            "Sets": "2",
+            "Reps": "10",
+            "Weight": "67kg"
+        },
+        "RDL": {
+            "Sets": "2",
+            "Reps": "10",
+            "Weight": "67kg"
+        },
+        "Leg Extension w. 1 sec. hold at top": {
+            "Sets": "3",
+            "Reps": "15",
+            "Weight": "12 plates"
+        },
+        "Leg Curl Tempo (controlled)": {
+            "Sets": "3",
+            "Reps": "12",
+            "Weight": "13 plates"
+        },
+        "Calf Raises (standing)": {
+            "Sets": "3",
+            "Reps": "12",
+            "Weight": "100kg"
+        },
+        "Bulgarian Split Squats": {
+            "Sets": "2",
+            "Reps": "10-12",
+            "Weight": "10kg KB"
+        }
+    },
+    "Day 6": {
+        "type": "Upper Overload",
+        "Bench Press": {
+            "Sets": "1",
+            "Reps": "6",
+            "Weight": "57kg"
+        },
+        "Incline DB Press": {
+            "Sets": "2",
+            "Reps": "10-12",
+            "Weight": "30kg"
+        },
+        "Pec Deck Fly": {
+            "Sets": "2",
+            "Reps": "12-14",
+            "Weight": "7x8x9x9 plates"
+        },
+        "Pull Ups": {
+            "Sets": "3",
+            "Reps": "armrap",
+            "Weight": "Bodyweight"
+        },
+        "Lat Pulldown ": {
+            "Sets": "3",
+            "Reps": "10-12",
+            "Weight": "12 plates"
+        },
+        "Seated shoulder width rows (high Pin)": {
+            "Sets": "3",
+            "Reps": "12-14",
+            "Weight": "100kg"
+        },
+        "DB Shrugs": {
+            "Sets": "3",
+            "Reps": "12-14",
+            "Weight": "40kg db"
+        },
+        "Seated DB curls": {
+            "Sets": "3",
+            "Reps": "12-14",
+            "Weight": "12.5kg db"
+        },
+        "Rope Tri extensions": {
+            "Sets": "3",
+            "Reps": "10-12",
+            "Weight": "8 plates"
+        },
+        "Single Arm D handle Tri pushdown": {
+            "Sets": "2",
+            "Reps": "12-15",
+            "Weight": "3 plates"
+        },
+        "Eugene Extensions for Forearms": {
+            "Sets": "1",
+            "Reps": "12-20",
+            "Weight": "7 plates"
+        },
+        "Fist Knuckle Pushups": {
+            "Sets": "1",
+            "Reps": "15-20",
+            "Weight": "Bodyweight"
+        },
+        "Machine Pronated curls": {
+            "Sets": "1",
+            "Reps": "6-10",
+            "Weight": "6 plates"
+        },
+        "Face Pull": {
+            "Sets": "2",
+            "Reps": "12-15",
+            "Weight": "14 plates"
+        }
+    }
+}

@@ -5,10 +5,6 @@ from openpyxl.formatting.rule import CellIsRule
 from openpyxl.utils import get_column_letter
 from os import system
 
-if system("dir C:\\Users\\Admin\\AppData\\Local\\Temp\\Block1_Training.xlsx >nul 2>&1") == 0:
-    system("del C:\\Users\\Admin\\AppData\\Local\\Temp\\Block1_Training.xlsx  >nul 2>&1")
-    print("File existed but I deleted it")
-
 # ---------------------------
 # USER STARTING WEIGHTS (adjusted for 17kg barbell)
 # ---------------------------
@@ -71,8 +67,8 @@ ws = wb.active
 
 if ws is None:
     ws = wb.create_sheet("Block 1")
-
-ws.title = "Block 1"
+else:
+    ws.title = "Block 1"
 
 headers = [
     "Day",
@@ -84,6 +80,7 @@ headers = [
     "Date",
 ]
 ws.append(headers)
+ws.freeze_panes = f"A2"
 
 for day, exercises in days.items():
     for ex, reps, wgt in exercises:
@@ -123,9 +120,10 @@ print("ws.columns", ws.columns)
 # Adjust column widths
 for col in ws.columns:
     max_length = max(len(str(cell.value)) if cell.value else 0 for cell in col)
-    ws.column_dimensions[get_column_letter(col[0].column)].width = max_length + 2
-    # print("col in columns: ", col)
-    print("col[0].column: ", col[0].column)
+    if col[0].column:
+        ws.column_dimensions[get_column_letter(col[0].column)].width = (
+            max_length + 2 if col[0].column != 1 else max_length + 5
+        )
 
 # ---- Notes / Instructions Tab ----
 notes = wb.create_sheet("Notes")
