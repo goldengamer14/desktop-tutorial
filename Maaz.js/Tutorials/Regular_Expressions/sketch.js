@@ -90,12 +90,12 @@ regular.wordBoundary = /hello\b/gi; // This \b is a wordBoundary that'll allow t
 
 regular.assertion = {};
 
-regular.assertion["?="] = /hello(?= world)/gi; // This ?= is an assertion that'll only accept a word if
+regular.assertion["?="] = /hello(?=, world)/gi; // This ?= is an assertion that'll only accept a word if
 //                                          The ', world' exists at the place
 //                                          E.g. 'hello, world' will be allowed while 'hello world' or
 //                                                'hello' won't be allowed
 
-regular.assertion["?!"] = /hello(?! world)/gi; // This ?! is an assertion that'll only accept a word if
+regular.assertion["?!"] = /hello(?!, world)/gi; // This ?! is an assertion that'll only accept a word if
 //                                          The ', world' does'nt exists at the place
 //                                          E.g. 'hello' or 'helloword' will be allowed while 'hello, world'
 //                                                won't be allowed

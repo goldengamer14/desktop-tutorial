@@ -3,14 +3,9 @@ import openpyxl.styles
 import openpyxl.utils
 import openpyxl.worksheet.table
 import openpyxl.formatting.rule
-import json
+from json import load
 
 work_book = None
-# try:
-#     work_book = openpyxl.load_workbook(
-#         "C:\\Users\\Admin\\AppData\\Local\\Temp\\Block1_Training.xlsx"
-#     )
-# except:
 work_book = openpyxl.Workbook()
 print("Created new Workbook")
 
@@ -18,8 +13,7 @@ work_sheet = work_book.active if work_book.active else work_book.create_sheet("W
 
 exercise_routine = None
 with open("Maaz-Python\\Openpyxl_Training\\Exercises.json", "r") as file:
-    json_data = file.read()
-    exercise_routine = json.loads(json_data)
+    exercise_routine = load(file)
     file.close()
 
 work_sheet.merge_cells("A1:F1")
@@ -137,33 +131,33 @@ for day in exercise_routine:
                 horizontal="center", vertical="center"
             )
 
-    # min_col, min_row, max_col, max_row = openpyxl.utils.range_boundaries(f"F{start_row+1}:F{work_sheet.max_row}")
-    # for cell in work_sheet.iter_cols(min_col=min_col,max_col=max_col):
     red_fill = openpyxl.styles.PatternFill(
-        start_color="ff0000", end_color="ff0000", fill_type="solid"
+        start_color="af0000", end_color="af0000", fill_type="solid"
     )
     green_fill = openpyxl.styles.PatternFill(
-        start_color="00ff00", end_color="00ff00", fill_type="solid"
+        start_color="00af00", end_color="00af00", fill_type="solid"
     )
     yellow_fill = openpyxl.styles.PatternFill(
-        start_color="ffff00", end_color="ffff00", fill_type="solid"
+        start_color="afaf00", end_color="afaf00", fill_type="solid"
     )
+    white_text = openpyxl.styles.Font(color="ececec")
+
     work_sheet.conditional_formatting.add(
         f"F{start_row+2}:F{work_sheet.max_row}",
         openpyxl.formatting.rule.CellIsRule(
-            operator="lessThan", formula=["4"], fill=green_fill
+            operator="between", formula=["0", "4"], fill=green_fill, font=white_text
         ),
     )
     work_sheet.conditional_formatting.add(
         f"F{start_row+2}:F{work_sheet.max_row}",
         openpyxl.formatting.rule.CellIsRule(
-            operator="greaterThan", formula=["6"], fill=red_fill
+            operator="between", formula=["7", "10"], fill=red_fill, font=white_text
         ),
     )
     work_sheet.conditional_formatting.add(
         f"F{start_row+2}:F{work_sheet.max_row}",
         openpyxl.formatting.rule.CellIsRule(
-            operator="between", formula=["4", "6"], fill=yellow_fill
+            operator="between", formula=["4", "6"], fill=yellow_fill, font=white_text
         ),
     )
 
@@ -172,16 +166,3 @@ for day in exercise_routine:
 
 work_book.save("C:\\Users\\Admin\\AppData\\Local\\Temp\\Block1_Training.xlsx")
 work_book.close()
-
-# for day, exercises in exercise_routine.items():
-#     work_sheet.append([day, exercises.get("type", "")])
-#     for exercise, details in exercises.items():
-#         if exercise != "type":
-#             work_sheet.append(
-#                 [
-#                     exercise,
-#                     details.get("Sets", ""),
-#                     details.get("Reps", ""),
-#                     details.get("Weight", ""),
-#                 ]
-#             )
