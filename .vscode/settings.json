@@ -52,7 +52,8 @@
         "corecrt.h": "c",
         "stdlib.h": "c",
         "bubble_sort.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "binary_tree_traversal_c.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.default.compilerPath": "D:/msys2/ucrt64/bin/g++.exe"

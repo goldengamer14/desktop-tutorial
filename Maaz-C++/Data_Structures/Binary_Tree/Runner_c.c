@@ -1,87 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#define type int
-
-struct Binary_Tree_Node
-{
-    type data;
-    struct Binary_Tree_Node *right;
-    struct Binary_Tree_Node *left;
-};
-
-struct Binary_Tree_Node *construct_Binary_Tree()
-{
-    return (struct Binary_Tree_Node *)calloc(1, sizeof(struct Binary_Tree_Node));
-}
-
-struct Binary_Tree_Node *construct_Binary_Tree_initialized(type data)
-{
-    struct Binary_Tree_Node *self = construct_Binary_Tree();
-    self->data = data;
-
-    return self;
-}
-
-struct Binary_Tree_Node *destruct_Binary_Tree(struct Binary_Tree_Node *ptr)
-{
-    if (ptr->left)
-        destruct_Binary_Tree(ptr->left);
-    if (ptr->right)
-        destruct_Binary_Tree(ptr->right);
-    if (ptr)
-        free(ptr);
-
-    return ptr;
-}
-
-#undef type
-
-void print_Binary_Tree_Preorder(struct Binary_Tree_Node *self)
-{
-    if (!self)
-        return;
-
-    printf(" %i [", self->data);
-    if (self->left)
-        print_Binary_Tree_Preorder(self->left);
-
-    printf("][");
-
-    if (self->right)
-        print_Binary_Tree_Preorder(self->right);
-
-    putchar(']');
-}
-
-void print_Binary_Tree_Postorder(struct Binary_Tree_Node *self)
-{
-    if (!self)
-        return;
-
-    if (self->left)
-        print_Binary_Tree_Postorder(self->left);
-
-    if (self->right)
-        print_Binary_Tree_Postorder(self->right);
-
-    printf("%i ", self->data);
-}
-
-void print_Binary_Tree_Inorder(struct Binary_Tree_Node *self)
-{
-    if (!self)
-        return;
-
-    if (self->left)
-        print_Binary_Tree_Inorder(self->left);
-
-    printf("%i ", self->data);
-
-    if (self->right)
-        print_Binary_Tree_Inorder(self->right);
-}
+#include "Linked_Binary_Tree_c.h"
+#include "Binary_Tree_Traversal_c.h"
 
 int main()
 {

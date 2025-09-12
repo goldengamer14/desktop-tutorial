@@ -10,10 +10,11 @@
 		"scope": "cpp",
 		"prefix": "include_cpp",
 		"body": [
-			"#include<iostream>",
+			"#include <iostream>",
+			"#include <cstring>",
 			"using namespace std;\n",
 			"int main() {",
-			"\tcout << \"Hello, World!\" << endl << endl;\n",
+			"\tcout << \"\\nHello, World!\\n\" << endl;\n",
 			"\t$1",
 			"\n\treturn 0;",
 			"}"
@@ -24,9 +25,9 @@
 		"scope": "c",
 		"prefix": "include_c",
 		"body": [
-			"#include<stdio.h>",
-			"#include<stdlib.h>",
-			"#include<string.h>\n",
+			"#include <stdio.h>",
+			"#include <stdlib.h>",
+			"#include <string.h>\n",
 			"int main() {",
 			"\tprintf(\"\\nHello, World!\\n\\n\");\n",
 			"\t$1",
