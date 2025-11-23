@@ -3,6 +3,7 @@
 *.bin
 *.md
 Maaz-C++/File/Prototypes/*
+Maaz-C++/Projects/Custom_Float/*.txt
 Maaz-Python/Data_Generator/Generated_Data*
 Maaz-Python/Pathlib_Training/*.txt
 Maaz-Python/Pathlib_Training/documents
