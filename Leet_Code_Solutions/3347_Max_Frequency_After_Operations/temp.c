@@ -43,6 +43,7 @@ static int check_array(int* arr, int* freq_arr, int* points, const int p_size,
                        int* max_freq_index) {
     int min_numOpers = restore_numOperations;
     int numOperations = restore_numOperations;
+    int min_numOpers_max_freq_index = numOperations;
 
     for (int p = 0; p < p_size; p++) {
         const int point = points[p];
@@ -58,40 +59,42 @@ static int check_array(int* arr, int* freq_arr, int* points, const int p_size,
             if (freq_arr[i] > freq_arr[max_freq_i])
                 max_freq_i = i;
 
-            printf("arr[i=%i] = %i; freq_arr[i=%i] = %i; numOperations = %i\n",
-                   i, arr[i], i, freq_arr[i], numOperations);
+            // printf("arr[i=%i] = %i; freq_arr[i=%i] = %i; numOperations =
+            // %i\n",
+            //        i, arr[i], i, freq_arr[i], numOperations);
             if (numOperations < 1) {
-                *max_freq_index = max_freq_i;
-                return 0;
+                // *max_freq_index = max_freq_i;
+                // return 0;
+                break;
             }
         }
 
         if (numOperations < min_numOpers)
-            min_numOpers = numOperations;
+            min_numOpers = numOperations >= 0 ? numOperations : 0;
 
         if (numOperations > 0 && i >= 0) {
             arr[point] = arr[i + 1];
             // numOperations--;
             // arr[point] -= k;
 
-            printf("\narr[point=%i] = %i\n", point, arr[point]);
+            // printf("\narr[point=%i] = %i\n", point, arr[point]);
 
-            printf("Here arr[i is %i] is %i\n", i, arr[i]);
+            // printf("Here arr[i is %i] is %i\n", i, arr[i]);
             for (i;
                  i >= 0 && abs(arr[point] - arr[i]) <= k && numOperations > 0;
                  i--) {
                 numOperations -= freq_arr[i];
 
                 if (freq_arr[i] > freq_arr[max_freq_i])
-                max_freq_i = i;
+                    max_freq_i = i;
 
-                printf(
-                    "arr[i=%i] = %i; numOperations = %i; min_numOpers = %i\n",
-                    i, arr[i], numOperations, min_numOpers);
+                // printf(
+                //     "arr[i=%i] = %i; numOperations = %i; min_numOpers =
+                //     %i\n", i, arr[i], numOperations, min_numOpers);
             }
 
             arr[point] = restore_point_val;
-            putchar('\n');
+            // putchar('\n');
 
             for (i; i >= 0 && abs(arr[point] - arr[i]) > k &&
                     abs(arr[point] - arr[i]) <= 2 * k && numOperations > 1;
@@ -99,26 +102,41 @@ static int check_array(int* arr, int* freq_arr, int* points, const int p_size,
                 numOperations -= freq_arr[i];
 
                 if (freq_arr[i] > freq_arr[max_freq_i])
-                max_freq_i = i;
+                    max_freq_i = i;
 
-                printf(
-                    "arr[point=%i] = %i; arr[i=%i] = %i; numOperations = %i\n",
-                    point, arr[point], i, arr[i], numOperations);
+                // printf(
+                //     "arr[point=%i] = %i; arr[i=%i] = %i; numOperations =
+                //     %i\n", point, arr[point], i, arr[i], numOperations);
             }
 
             if (numOperations < min_numOpers)
-                min_numOpers = numOperations;
+                min_numOpers = numOperations >= 0 ? numOperations : 0;
+        }
+
+        printf("max_freq_index = %i; max_freq_i = %i\n", *max_freq_index,
+               max_freq_i);
+
+        printf("min_numOpers = %i; min_numOpers_max_freq_index = %i\n", min_numOpers,
+               min_numOpers_max_freq_index);
+
+        if (min_numOpers == min_numOpers_max_freq_index &&
+            freq_arr[max_freq_i] > freq_arr[*max_freq_index]) {
+            *max_freq_index = max_freq_i;
+            printf("setting min_numOpers_max_freq_index=%i = min_numOpers=%i\n", min_numOpers_max_freq_index, min_numOpers);
+            min_numOpers_max_freq_index = min_numOpers;
+        } else if (min_numOpers < min_numOpers_max_freq_index && max_freq_i != *max_freq_index) {
+            *max_freq_index = max_freq_i;
+            printf("setting min_numOpers_max_freq_index=%i = min_numOpers=%i\n", min_numOpers_max_freq_index, min_numOpers);
+            min_numOpers_max_freq_index = min_numOpers;
         }
 
         numOperations = restore_numOperations;
-
-        *max_freq_index = max_freq_i;
 
         printf("arr[point=%i] = %i; min_numOpers = %i\n\n", point, arr[point],
                min_numOpers);
     }
 
-    printf("\nmin_numOpers = %i\n\n", min_numOpers);
+    // printf("\nmin_numOpers = %i\n\n", min_numOpers);
     return min_numOpers;
 }
 
@@ -163,13 +181,13 @@ int maxFrequency(int* nums, int numsSize, int k, int numOperations) {
         i = j - 1;
     }
 
-    // putchar('{');
-    // for (int i = 0; i < val_size; i++)
-    //     printf("%i%s", values[i], i < val_size - 1 ? ", " : "}\n");
+    putchar('{');
+    for (int i = 0; i < val_size; i++)
+        printf("%i%s", values[i], i < val_size - 1 ? ", " : "}\n");
 
-    // putchar('{');
-    // for (int i = 0; i < val_size; i++)
-    //     printf("%i%s", freqs[i], i < val_size - 1 ? ", " : "}\n");
+    putchar('{');
+    for (int i = 0; i < val_size; i++)
+        printf("%i%s", freqs[i], i < val_size - 1 ? ", " : "}\n");
 
     // putchar('{');
     // for (int i = 0; i < max_freq_i; i++)
@@ -197,13 +215,8 @@ int maxFrequency(int* nums, int numsSize, int k, int numOperations) {
     // printf("\nzero_operations = %i\n", zero_operations);
     printf("freqs[max_freq_i=%i]=%i + numOperations=%i - zero_operations=%i = "
            "result=%i\n",
-           freqs[max_freq_i], numOperations, zero_operations,
+           max_freq_i, freqs[max_freq_i], numOperations, zero_operations,
            result);
-    // printf("freqs[max_freq[0]=%i]=%i + numOperations=%i - zero_operations=%i
-    // = "
-    //        "result=%i\n",
-    //        max_freq[0], freqs[max_freq[0]], numOperations, zero_operations,
-    //        result);
 
     free(values);
     return result <= numsSize ? result : numsSize;

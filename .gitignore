@@ -4,10 +4,12 @@
 *.md
 Maaz-C++/File/Prototypes/*
 Maaz-C++/Projects/Custom_Float/*.txt
+Maaz-C++/Syscalls/file.txt
 Maaz-Python/Data_Generator/Generated_Data*
 Maaz-Python/Pathlib_Training/*.txt
 Maaz-Python/Pathlib_Training/documents
 Maaz-Python/Pathlib_Training/reports
+Maaz.js/Project/.env
 cmd_practice/*.log
 cmd_practice/*.txt
 cmd_practice/*.cpp
