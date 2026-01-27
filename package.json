@@ -1,0 +1,35 @@
+{
+  "name": "maaz-git_repository",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Maaz.js",
+  "scripts": {
+    "websocket": "node --watch Maaz.js/WebSocket/backend/backend.js",
+    "pern-cc": "node --watch Maaz.js/Pern-cc/03_postgresql/server.js",
+    "migrate-drizzle": "npx drizzle-kit migrate --config ./Maaz.js/Pern-cc/03_postgresql/drizzle.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goldengamer14/desktop-tutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.45.1",
+    "express": "^5.2.1",
+    "pg": "^8.17.2",
+    "ws": "^8.19.0"
+  },
+  "bugs": {
+    "url": "https://github.com/goldengamer14/desktop-tutorial/issues"
+  },
+  "homepage": "https://github.com/goldengamer14/desktop-tutorial#readme",
+  "devDependencies": {
+    "@types/pg": "^8.16.0",
+    "drizzle-kit": "^0.31.8"
+  }
+}

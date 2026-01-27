@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARS API</title>
+
+    <script src="sketch.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <select id="request-select">
+        <option value="GET">GET</option>
+        <option value="POST">POST</option>
+        <option value="PUT">PUT</option>
+        <option value="DELETE">DELETE</option>
+    </select>
+
+    <input type="number" id="car-id" placeholder="Car ID (for GET, PUT, DELETE)" />
+    <input type="text" id="car-name" placeholder="Car Name (for POST, PUT)" />
+    <input type="text" id="car-type" placeholder="Car Type (for POST, PUT)" />
+    <input type="number" id="car-price" placeholder="Car Price (for POST, PUT)" />
+    <input type="number" id="car-mileage" placeholder="Car Mileage (for POST, PUT)" />
+    <button id="send-request">Send Request</button>
+
+    <br><br>
+    <hr>
+    <br><br>
+
+    <div id="response-display"></div>
+</body>
+</html>

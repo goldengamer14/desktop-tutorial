@@ -3,20 +3,30 @@
 
 void Drain_Console_Input()
 {
-    HANDLE h_in = GetStdHandle(STD_INPUT_HANDLE), h_out = GetStdHandle(STD_OUTPUT_HANDLE);
+    const HANDLE h_in = GetStdHandle(STD_INPUT_HANDLE), h_out = GetStdHandle(STD_OUTPUT_HANDLE);
     char dump_buffer[128];
     DWORD bytes_dumped = 0, dumped_bytes, mode;
 
-    // ReadConsoleA(h_in, dump_buffer, sizeof(dump_buffer), &dumped_bytes, NULL);
-    // bytes_dumped += dumped_bytes;
+    // DISABLE LINE INPUT TO READ INPUT CHARACTER BY CHARACTER
+    GetConsoleMode(h_in, &mode);
+    SetConsoleMode(h_in, mode & ~ENABLE_ECHO_INPUT);
 
-    // while (GetConsoleMode(h_in, &mode) && (mode & ENABLE_ECHO_INPUT))
-    do {
-        WriteFile(h_out, "Input anything to continue:\t", 28, NULL, NULL);
+    do
+    {
+        WriteConsoleA(h_out, "Press Enter to continue:\t", 28, NULL, NULL);
         ReadConsoleA(h_in, dump_buffer, sizeof(dump_buffer), &dumped_bytes, NULL);
+
+        // OVERWRITE THE LINE WITH SPACES
+        strcpy(dump_buffer, "\r");
+        memset(dump_buffer + 1, ' ', sizeof(dump_buffer) - 3);
+        strcpy(dump_buffer + sizeof(dump_buffer) - 2, "\r");
+        WriteConsoleA(h_out, dump_buffer, sizeof(dump_buffer), NULL, NULL);
+
         bytes_dumped += dumped_bytes;
-    }
-    while (dumped_bytes == sizeof(dump_buffer));
+    } while (dumped_bytes == sizeof(dump_buffer));
+
+    // RE-ENABLE LINE INPUT
+    SetConsoleMode(h_in, mode | ENABLE_LINE_INPUT);
 }
 
 int main()
@@ -34,11 +44,15 @@ int main()
     ReadFile(h_in, buffer, sizeof(buffer), &bytes_read, NULL);
     buffer[bytes_read] = '\0';
 
-    strcpy(console_prompt, "\nYou typed this: \t");
+    strcpy(console_prompt, "\nYou typed this:\t");
 
     // WRITE console_prompt and buffer TO stdout
     WriteFile(h_out, console_prompt, strlen(console_prompt), &bytes_written, NULL);
     WriteFile(h_out, buffer, strlen(buffer), &bytes_written, NULL);
+
+    // WRITE A NEWLINE TO stdout
+    strcpy(console_prompt, "\n");
+    WriteFile(h_out, console_prompt, 1, &bytes_written, NULL);
 
     // WRITE THE VALUE OF bytes_read TO stdout
     strcpy(console_prompt, "bytes_read = ");
@@ -60,6 +74,10 @@ int main()
     ReadConsoleA(h_in, buffer, sizeof(buffer), &bytes_read, NULL);
     buffer[bytes_read] = '\0';
 
+    // WRITE A NEWLINE TO stdout
+    strcpy(console_prompt, "\n");
+    WriteFile(h_out, console_prompt, 1, &bytes_written, NULL);
+
     // WRITE THE console_prompt & buffer TO stdout
     strcpy(console_prompt, "You Wrote this:\t");
 
@@ -73,6 +91,12 @@ int main()
 
     WriteFile(h_out, console_prompt, strlen(console_prompt), &bytes_written, NULL);
 
+    // WRITE A NEWLINE TO stdout
+    strcpy(console_prompt, "\n");
+    WriteFile(h_out, console_prompt, 1, &bytes_written, NULL);
+
+    Drain_Console_Input();
+
     /* ----------------------------------SCANNING INTEGERS--------------------------------------------------------------- */
     int user_integer = 0;
 
@@ -81,6 +105,10 @@ int main()
     WriteFile(h_out, console_prompt, strlen(console_prompt), &bytes_written, NULL);
     ReadFile(h_in, buffer, sizeof(buffer), &bytes_read, NULL);
     buffer[bytes_read] = '\0';
+
+    // WRITE A NEWLINE TO stdout
+    strcpy(console_prompt, "\n");
+    WriteFile(h_out, console_prompt, 1, &bytes_written, NULL);
 
     // CONVERT buffer TO INTEGER AND STORE IN user_integer
     user_integer = atoi(buffer);
