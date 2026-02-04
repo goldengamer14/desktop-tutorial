@@ -1,0 +1,24 @@
+{
+  "name": "node_server_side_packages",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "websocket": "node --watch ../Maaz.js/WebSocket/backend/backend.js",
+    "pern-cc": "node --watch ../Maaz.js/Pern-cc/03_postgresql/server.js",
+    "migrate-drizzle": "npx drizzle-kit migrate --config ../Maaz.js/Pern-cc/03_postgresql/drizzle.config.js",
+    "install-drizzle": "npm install drizzle-orm @types/pg\nnpm install -D drizzle-kit",
+    "install-dependencies": "npm install express pg cors dotenv ws"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.45.1",
+    "express": "^5.2.1",
+    "pg": "^8.17.2",
+    "ws": "^8.19.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.16.0",
+    "drizzle-kit": "^0.31.8"
+  }
+}

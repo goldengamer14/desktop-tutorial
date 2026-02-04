@@ -1,6 +1,6 @@
 import express from "express";
 import { db, schema } from "./db.js";
-import cors from "cors";
+// import cors from "cors";
 import { eq, ne, gt, lt, gte, lte } from "drizzle-orm";
 // const express = require("express");
 
@@ -27,7 +27,8 @@ cars = cars.reduce((acc, car) => {
             name: car.name,
             type: car.type,
             price: car.price,
-            mileage: car.mileage
+            mileage: car.mileage,
+            createdAt: car.createdAt
         };
         carNames.add(car.name);
         return acc;
@@ -55,7 +56,7 @@ console.log(cars);
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-app.use(cors());
+// app.use(cors());
 
 // Make a middleware to log requests
 app.use((req, res, next) => {

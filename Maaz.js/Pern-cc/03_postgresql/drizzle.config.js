@@ -8,8 +8,8 @@ if (!process.env.DATABASE_URL) {
 console.log("Successfully loaded DATABASE_URL from environment variables.");
 
 export default defineConfig({
-    schema: "./schema.js",
-    out: "./drizzle",
+    schema: "../Maaz.js/Pern-cc/03_postgresql/schema.js",
+    out: "../Maaz.js/Pern-cc/03_postgresql/drizzle",
     dialect: "postgresql",
     dbCredentials: {
         url: process.env.DATABASE_URL,
