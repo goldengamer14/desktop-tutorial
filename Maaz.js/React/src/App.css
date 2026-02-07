@@ -1,0 +1,143 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  overflow-x: hidden;
+  overflow-y: visible;
+
+  font-family: system-ui, Helvetica, Arial, sans-serif;
+
+  background: linear-gradient(90deg, #34b97b31, #042938);
+  min-height: 100dvh !important;
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  min-width: 90%;
+  min-height: 90%;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+
+  width: 100%;
+  min-height: 100%;
+
+  gap: 2rem;
+}
+
+#heading {
+  padding-top: 2rem;
+  margin-bottom: auto;
+  color: #facaca;
+}
+
+#imgs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  gap: 15vw;
+}
+
+.img {
+  width: 20%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.img:hover {
+  transform: scale(1.05);
+  box-shadow: inset 0 0 4rem rgba(24, 162, 216, 0.7), 0 0 4rem rgba(24, 162, 216, 0.2);
+  transition: transform 0.3s ease;
+  transition: box-shadow 0.3s ease;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+
+  flex-shrink: 1;
+
+  background-color: #ececec;
+  border: 2px solid #000;
+  border-top: 4px solid #080;
+  box-shadow: inset 0 0 2.5rem rgba(0, 0, 0, 0.5), 5px 5px 1rem rgba(0, 0, 0, 0.3);
+
+  width: 40%;
+  gap: 10%;
+  padding: 1rem;
+  margin: 2rem;
+}
+
+.card-image {
+  width: 40%;
+  border-radius: 50%;
+  border: 2px solid #000;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+  font-weight: bold;
+  font: system-ui, Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+}
+
+.card-description {
+  font: Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.butn {
+  all: unset;
+  /* Clears default button styling */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #20b0db 0%, #1892b6 100%);
+  color: #ffffff;
+  /* White text usually pops better on blue */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 2px solid #000;
+
+  padding: 12px 24px;
+  min-width: 160px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 15px rgba(32, 176, 219, 0.3);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.butn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(32, 176, 219, 0.4);
+  filter: brightness(1.1);
+}
+
+.butn:active:not(:disabled) {
+  transform: translateY(-1px);
+}
