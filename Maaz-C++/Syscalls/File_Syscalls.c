@@ -126,7 +126,15 @@ int main()
 
         WriteConsoleA(h_out, buffer, bytes_read, NULL, NULL);
         WriteConsoleA(h_out, "\n", 1, NULL, NULL);
-    } while (bytes_read >= sizeof(buffer - 1));
+
+        WriteConsoleA(h_out, "Read Bytes: ", 12, NULL, NULL);
+        DWORD_to_ascii(bytes_read, prompt, 10);
+        WriteConsoleA(h_out, prompt, strlen(prompt), NULL, NULL);
+        WriteConsoleA(h_out, "\nTotal File Size So Far: ", 25, NULL, NULL);
+        DWORD_to_ascii(total_file_size, prompt, 10);
+        WriteConsoleA(h_out, prompt, strlen(prompt), NULL, NULL);
+        WriteConsoleA(h_out, "\n", 1, NULL, NULL);
+    } while (bytes_read >= sizeof(buffer - 1)); // Continue reading until the end of the file
 
     strcpy(prompt, "\nContents of length ");
     DWORD_to_ascii(total_file_size, prompt + strlen(prompt), 2);
@@ -141,6 +149,46 @@ int main()
 
     // Close the file handle
     CloseHandle(hfile);
+
+    // {{{{{{{{FILE POINTER MECHANICS}}}}}}}}
+    HANDLE h_temp = CreateFile(
+        "temp.txt",
+        GENERIC_WRITE | GENERIC_READ,
+        FILE_SHARE_READ,
+        NULL,
+        CREATE_ALWAYS,
+        FILE_FLAG_DELETE_ON_CLOSE,
+        NULL);
+
+    WriteConsoleA(h_out, "\nWrite something to temp.txt:\n ", 32, NULL, NULL);
+    ReadConsoleA(h_in, buffer, sizeof(buffer), &bytes_read, NULL);
+    buffer[bytes_read] = '\0';
+
+    WriteFile(h_temp, buffer, bytes_read, &bytes_written, NULL);
+
+    WriteConsoleA(h_out, "\nWhat should be the offset to move the file pointer to? (Press Enter for 0): ", 78, NULL, NULL);
+    ReadConsoleA(h_in, prompt, sizeof(prompt), &bytes_read, NULL);
+    prompt[bytes_read] = '\0';
+
+    LARGE_INTEGER temp_offset = {.QuadPart = atoi(prompt)}; // Convert the input string to an integer (offset)
+    SetFilePointerEx(h_temp, temp_offset, NULL, FILE_BEGIN);
+
+    // Read the content from the new file pointer position
+    ReadFile(h_temp, buffer, sizeof(buffer) - 1, &bytes_read, NULL);
+    buffer[bytes_read] = '\0'; // Null-terminate the string
+
+    WriteConsoleA(h_out, "\nContent from the new file pointer position:\n ", 45, NULL, NULL);
+    WriteConsoleA(h_out, buffer, bytes_read, &bytes_written, NULL);
+
+    // SEEK_SET: FILE_BEGIN
+    temp_offset.QuadPart = 0; // Move the file pointer to the beginning of the file
+    SetFilePointerEx(h_temp, temp_offset, NULL, FILE_BEGIN);
+
+    // SEEK_END: FILE_END
+    temp_offset.QuadPart = 0; // Move the file pointer to the end of the file
+    SetFilePointerEx(h_temp, temp_offset, NULL, FILE_END);
+
+    CloseHandle(h_temp);
 
     // Return 0 to indicate successful program execution
     return 0;

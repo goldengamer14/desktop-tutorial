@@ -3,6 +3,7 @@
 *.bin
 *.md
 *.env
+*.zip
 Maaz-C++/File/Prototypes/*
 Maaz-C++/Projects/Custom_Float/*.txt
 Maaz-C++/Syscalls/file.txt
