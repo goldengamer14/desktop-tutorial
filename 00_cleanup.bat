@@ -3,6 +3,13 @@ if exist ".gitignore" (
     for /f "usebackq delims=" %%l in (".gitignore") do (
         setlocal enabledelayedexpansion
         set "var=%%l"
+
+        if not findstr !var! ".env" > nul 2>&1 (
+             echo Skipping %%l as it contains .env
+             endlocal
+             echo.
+             goto :continue
+        )
         if not "!var:*=%!"=="!var!" (
             set "var=!var:/=\!"
             del /s /f /q "!var!" 2 > nul

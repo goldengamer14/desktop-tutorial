@@ -4,6 +4,9 @@
 *.md
 *.env
 *.zip
+*.psd
+*.jpg
+*.png
 Maaz-C++/File/Prototypes/*
 Maaz-C++/Projects/Custom_Float/*.txt
 Maaz-C++/Syscalls/file.txt
@@ -11,6 +14,7 @@ Maaz-Python/Data_Generator/Generated_Data*
 Maaz-Python/Pathlib_Training/*.txt
 Maaz-Python/Pathlib_Training/documents
 Maaz-Python/Pathlib_Training/reports
+*__pycache__/
 Maaz.js/Pern-cc/03_postgresql/drizzle/
 *node_modules
 cmd_practice/*.log

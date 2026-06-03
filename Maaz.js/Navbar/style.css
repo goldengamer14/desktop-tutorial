@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Poppins, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #bbb;
+}
+
+body {
+    background-color: hsl(240, 54%, 9%);
+    ;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+main {
+    padding: min(5rem, 7%);
+}
+
+main p {
+    margin-top: 0.35rem;
+}
+
+nav {
+    background-color: hsl(238, 60%, 47%);
+    display: flex;
+    padding: 1rem;
+    border-bottom: 3px solid #000000;
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1037;
+    transition: right .3s ease;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+nav #home-li {
+    margin-right: auto;
+}
+
+nav a {
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    transition: background-color 150ms ease;
+    border: none;
+}
+
+nav a:hover {
+    border-bottom: 3px solid #000000;
+}
+
+nav a.active-link {
+    border-bottom: 3px solid #000000;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1036;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: min(15rem, 100%);
+        z-index: 1038;
+        border-left: 1px solid #000000;
+
+        transition: right 150ms ease;
+        right: -100%;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    #menu-toggle {
+        display: block;
+        background-image: url("./public/Hamburger.jpg");
+        border: none;
+        font-size: 1.5rem;
+        color: #fff;
+        cursor: pointer;
+        position: fixed;
+        right: 0.7rem;
+        top: 0.7rem;
+        z-index: 1039;
+    }
+
+    nav ul {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        width: 100%;
+        padding-left: 2.5rem;
+    }
+
+    nav a:hover {
+        border-bottom: none;
+        border-left: 3px solid #000000;
+    }
+
+    nav a.active-link {
+        border-bottom: none;
+        border-left: 3px solid #000000;
+    }
+
+    nav #home-li {
+        margin-right: 0;
+    }
+}
