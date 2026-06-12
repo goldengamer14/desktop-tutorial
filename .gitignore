@@ -1,6 +1,8 @@
 *.exe
+*.out
 *.dat
 *.bin
+*.tmp
 *.md
 *.env
 *.zip
