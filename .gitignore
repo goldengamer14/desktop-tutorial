@@ -3,7 +3,6 @@
 *.dat
 *.bin
 *.tmp
-*.md
 *.env
 *.zip
 *.psd

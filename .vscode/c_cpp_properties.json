@@ -1,6 +1,16 @@
 {
     "configurations": [
         {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c14",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        },
+        {
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**"
@@ -10,7 +20,10 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "D:/msys2/ucrt64/bin/g++.exe"
+            "compilerPath": "D:/msys2/ucrt64/bin/g++.exe",
+            "cStandard": "c14",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "windows-gcc-x64"
         }
     ],
     "version": 4
