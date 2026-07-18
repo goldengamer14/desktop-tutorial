@@ -45,3 +45,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# nest-cc ignores
+# Add these to your root .gitignore:
+/build
+/coverage
+/.nyc_output
+.temp

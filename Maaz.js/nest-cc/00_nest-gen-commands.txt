@@ -1,0 +1,22 @@
+# NestJS CLI Commands
+# 
+# Syntax
+# Example Usage
+
+nest g module <module-name>
+nest g module user
+
+nest g controller <module-name>
+nest g controller user
+
+nest g service <module-name>
+nest g service user
+
+nest g interceptor <directory>/<interceptor-name> --flat
+nest g interceptor utils/transform --flat
+
+nest g middleware <directory>/<middleware-name> --flat
+nest g middleware middleware/api-key --flat
+
+nest g guard <directory>/<guard-name> --flat
+nest g guard guard/role --flat
