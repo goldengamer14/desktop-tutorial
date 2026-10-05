@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qwen Desktop Controller &middot; Ollama qwen3:1.7b</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="navbar">
+      <div class="brand">
+        <div class="brand-icon">
+          <span class="sparkle-icon">&#10024;</span>
+        </div>
+        <div class="brand-text">
+          <h1>Qwen System Controller</h1>
+          <span class="sub-badge">Model: <strong>qwen3:1.7b</strong> via Ollama</span>
+        </div>
+      </div>
+      <div class="header-status">
+        <div class="status-indicator online" id="statusIndicator">
+          <span class="dot"></span>
+          <span id="statusText">Connected to Ollama</span>
+        </div>
+        <div class="stats-counter" id="appStatsCounter">
+          <span class="stat-num" id="totalAppsNum">--</span>
+          <span class="stat-label">Apps Detected</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <main class="dashboard-grid">
+      <!-- Left Column: Chat & Agent Interface -->
+      <section class="chat-section card glass">
+        <div class="section-header">
+          <div class="title-with-icon">
+            <span class="icon">&#128172;</span>
+            <h2>Natural Language Controller</h2>
+          </div>
+          <button class="btn btn-ghost" id="clearChatBtn" title="Clear chat history">
+            &#128465; Clear Context
+          </button>
+        </div>
+
+        <!-- Chat messages container -->
+        <div class="chat-messages" id="chatMessages">
+          <div class="message assistant">
+            <div class="avatar">&#129302;</div>
+            <div class="msg-bubble">
+              <p>Hello! I am your local <strong>Qwen3:1.7b</strong> Windows assistant.</p>
+              <p>I can open any software, program, or Windows tool installed on your machine. You can speak to me naturally, for example:</p>
+              <div class="prompt-chips">
+                <button class="chip" onclick="sendSuggested('Open Notepad and Calculator')">&ldquo;Open Notepad and Calculator&rdquo;</button>
+                <button class="chip" onclick="sendSuggested('Launch Chrome and open YouTube')">&ldquo;Launch Chrome and open YouTube&rdquo;</button>
+                <button class="chip" onclick="sendSuggested('What apps do I have for coding?')">&ldquo;What apps do I have for coding?&rdquo;</button>
+                <button class="chip" onclick="sendSuggested('Open Windows Settings')">&ldquo;Open Windows Settings&rdquo;</button>
+                <button class="chip" onclick="sendSuggested('Close Notepad')">&ldquo;Close Notepad&rdquo;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Input Bar -->
+        <form class="chat-input-bar" id="chatForm">
+          <input
+            type="text"
+            id="chatInput"
+            placeholder="Type your command (e.g. 'Open Calculator', 'Launch Chrome', 'Close Paint')..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit" class="btn btn-primary" id="sendBtn">
+            <span>Send</span>
+            <svg class="send-arrow" viewBox="0 0 24 24" width="18" height="18">
+              <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </button>
+        </form>
+      </section>
+
+      <!-- Right Column: Quick Launch & Installed Apps Explorer -->
+      <section class="sidebar-section">
+        <!-- Quick Dock -->
+        <div class="card glass dock-card">
+          <div class="section-header">
+            <div class="title-with-icon">
+              <span class="icon">&#9889;</span>
+              <h3>Quick Launch Dock</h3>
+            </div>
+          </div>
+          <div class="quick-dock-grid">
+            <button class="dock-btn" onclick="directLaunch('notepad')">
+              <span class="dock-icon">&#128221;</span>
+              <span class="dock-name">Notepad</span>
+            </button>
+            <button class="dock-btn" onclick="directLaunch('calc')">
+              <span class="dock-icon">&#128290;</span>
+              <span class="dock-name">Calculator</span>
+            </button>
+            <button class="dock-btn" onclick="directLaunch('chrome')">
+              <span class="dock-icon">&#127760;</span>
+              <span class="dock-name">Chrome</span>
+            </button>
+            <button class="dock-btn" onclick="directLaunch('code')">
+              <span class="dock-icon">&#128187;</span>
+              <span class="dock-name">VS Code</span>
+            </button>
+            <button class="dock-btn" onclick="directLaunch('explorer')">
+              <span class="dock-icon">&#128193;</span>
+              <span class="dock-name">Explorer</span>
+            </button>
+            <button class="dock-btn" onclick="directLaunch('taskmgr')">
+              <span class="dock-icon">&#128200;</span>
+              <span class="dock-name">Task Mgr</span>
+            </button>
+            <button class="dock-btn" onclick="directLaunch('mspaint')">
+              <span class="dock-icon">&#127912;</span>
+              <span class="dock-name">Paint</span>
+            </button>
+            <button class="dock-btn" onclick="directLaunch('settings')">
+              <span class="dock-icon">&#9881;</span>
+              <span class="dock-name">Settings</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Installed Apps Browser -->
+        <div class="card glass apps-browser-card">
+          <div class="section-header">
+            <div class="title-with-icon">
+              <span class="icon">&#128269;</span>
+              <h3>Installed Applications</h3>
+            </div>
+            <span class="badge" id="appsCountBadge">0 apps</span>
+          </div>
+          <div class="search-box">
+            <input
+              type="text"
+              id="appSearchInput"
+              placeholder="Search all installed system apps..."
+              autocomplete="off"
+            />
+          </div>
+          <div class="apps-list-scroll" id="appsList">
+            <div class="loading-spinner">Loading system applications...</div>
+          </div>
+        </div>
+
+        <!-- Active Processes Monitor -->
+        <div class="card glass active-proc-card">
+          <div class="section-header">
+            <div class="title-with-icon">
+              <span class="icon">&#9874;</span>
+              <h3>Active Applications</h3>
+            </div>
+            <button class="btn btn-ghost-sm" onclick="fetchRunningApps()">&#8635; Refresh</button>
+          </div>
+          <div class="proc-list-scroll" id="procList">
+            <div class="loading-spinner">Checking active processes...</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+groq
+requests
+python-dotenv
+playwright
+mcp[cli]>=2,<3

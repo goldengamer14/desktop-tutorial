@@ -21,6 +21,20 @@ Maaz.js/Pern-cc/03_postgresql/drizzle/
 cmd_practice/*.log
 cmd_practice/*.txt
 cmd_practice/*.cpp
+
+# Antigravity/
+Antigravity/**__pycache__
+Antigravity/**.venv
+Antigravity/**dist
+Antigravity/**.gitignore
+Antigravity/DPP_Agent/v*/*.pyc
+Antigravity/DPP_Agent/v*/*.pyo
+Antigravity/DPP_Agent/v*/output/
+Antigravity/DPP_Agent/v*/.env
+Antigravity/DPP_Agent/v*/*.egg-info/
+Antigravity/DPP_Agent/v*/build/
+Antigravity/DPP_Agent/v*/.DS_Store
+
 *_copy
 
 logs

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="480" height="640"></canvas>
+        <div id="startMenu" class="overlay">
+            <h1>Flappy Bird Clone</h1>
+            <p>Click or tap to start</p>
+        </div>
+        <div id="gameOver" class="overlay hidden">
+            <h1>Game Over</h1>
+            <p id="scoreText">Score: 0</p>
+            <p>Click or tap to restart</p>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

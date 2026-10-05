@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Subway Surfers 3D - Endless Runner</title>
+  <meta name="description" content="Play Subway Surfers 3D in your browser! Dodge trains, jump hurdles, roll under barriers, collect gold coins, and surf with arrow keys.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 3D WebGL Canvas Container -->
+  <div id="game-container"></div>
+
+  <!-- Top Heads-Up Display (HUD) -->
+  <header id="hud-overlay">
+    <div class="hud-left">
+      <div class="hud-card" id="high-score-card">
+        <span class="high-score-badge" id="hud-high">TOP: 0</span>
+      </div>
+      <div class="multiplier-badge" id="multiplier-badge">1X</div>
+    </div>
+
+    <div class="hud-center">
+      <div class="score-display">
+        <span class="score-label">SCORE</span>
+        <span class="score-value" id="hud-score">0</span>
+      </div>
+    </div>
+
+    <div class="hud-right">
+      <div class="hud-card coin-counter">
+        <div class="coin-icon">★</div>
+        <span class="coin-value" id="hud-coins">0</span>
+      </div>
+
+      <button class="hud-btn board-action-btn" id="board-btn" title="Activate Hoverboard (Space)">
+        🛹 <span>SURF</span>
+      </button>
+
+      <button class="hud-btn" id="audio-toggle-btn" title="Toggle Sound">🔊</button>
+    </div>
+  </header>
+
+  <!-- Power-Up Active Duration Indicators -->
+  <aside id="powerup-meters-container">
+    <div class="powerup-meter" id="powerup-magnet">
+      <span class="powerup-icon">🧲</span>
+      <div class="powerup-bar-track">
+        <div class="powerup-progress"></div>
+      </div>
+    </div>
+
+    <div class="powerup-meter" id="powerup-sneakers">
+      <span class="powerup-icon">👟</span>
+      <div class="powerup-bar-track">
+        <div class="powerup-progress"></div>
+      </div>
+    </div>
+
+    <div class="powerup-meter" id="powerup-jetpack">
+      <span class="powerup-icon">🚀</span>
+      <div class="powerup-bar-track">
+        <div class="powerup-progress"></div>
+      </div>
+    </div>
+
+    <div class="powerup-meter" id="powerup-hoverboard">
+      <span class="powerup-icon">🛹</span>
+      <div class="powerup-bar-track">
+        <div class="powerup-progress"></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Pop-in Toast Alert -->
+  <div id="powerup-toast">SUPER SNEAKERS!</div>
+
+  <!-- On-Screen Controls for Touch / Laptop Trackpads -->
+  <div id="touch-controls">
+    <div class="touch-cluster">
+      <button class="touch-btn" id="touch-left" title="Left">◀</button>
+      <button class="touch-btn" id="touch-right" title="Right">▶</button>
+    </div>
+    <div class="touch-cluster">
+      <button class="touch-btn" id="touch-up" title="Jump">▲</button>
+      <button class="touch-btn" id="touch-down" title="Slide / Fast Dive">▼</button>
+    </div>
+  </div>
+
+  <!-- Start Screen Overlay / Animated Startup Menu -->
+  <div class="modal-overlay" id="start-overlay">
+    <!-- Floating decorative background animations -->
+    <div class="floating-decor decor-1">🛹</div>
+    <div class="floating-decor decor-2">🪙</div>
+    <div class="floating-decor decor-3">⚡</div>
+    <div class="floating-decor decor-4">🎨</div>
+    <div class="floating-decor decor-5">★</div>
+
+    <div class="modal-card startup-card">
+      <!-- High Score Pill -->
+      <div class="menu-record-pill">
+        <span class="crown-icon">👑</span>
+        <span class="pill-label">RECORD</span>
+        <span class="pill-value" id="menu-high-score">0</span>
+      </div>
+
+      <!-- Animated Subway Surfers Logo -->
+      <div class="logo-wrapper">
+        <h1 class="game-logo animated-logo">SUBWAY<br><span class="logo-accent">SURFERS</span></h1>
+        <div class="logo-spray-tag">3D WORLD RUNNER</div>
+      </div>
+
+      <!-- Animated "PRESS SPACE TO START" Primary Action -->
+      <div class="spacebar-action-box" id="start-btn" role="button" tabindex="0" title="Click or Press Space to Start">
+        <div class="spacebar-key-wrapper">
+          <div class="spacebar-key">
+            <span class="spacebar-icon">␣</span>
+            <span class="spacebar-title">SPACEBAR</span>
+            <div class="spacebar-shine"></div>
+          </div>
+        </div>
+
+        <div class="spacebar-glow-text">
+          <span class="pulse-indicator"></span>
+          <span class="space-callout">PRESS <span class="space-word">SPACE</span> TO START</span>
+          <span class="pulse-indicator"></span>
+        </div>
+
+        <div class="click-hint-label">TAP TO DASH</div>
+      </div>
+
+      <!-- Controls Guide Grid -->
+      <div class="controls-guide">
+        <div class="control-item">
+          <span>Switch Lanes</span>
+          <div class="key-combo"><span class="key-badge">◀</span> <span class="key-badge">▶</span> or <span class="key-badge">A</span> <span class="key-badge">D</span></div>
+        </div>
+        <div class="control-item">
+          <span>Jump (Trains / Hurdles)</span>
+          <div class="key-combo"><span class="key-badge">▲</span> or <span class="key-badge">W</span></div>
+        </div>
+        <div class="control-item">
+          <span>Duck / Slide & Dive</span>
+          <div class="key-combo"><span class="key-badge">▼</span> or <span class="key-badge">S</span></div>
+        </div>
+        <div class="control-item">
+          <span>Hoverboard Shield</span>
+          <div class="key-combo"><span class="key-badge key-space-badge">SPACE</span> (In-Game)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div class="modal-overlay" id="gameover-modal">
+    <div class="modal-card">
+      <h2 class="gameover-title">BUSTED!</h2>
+      <p class="gameover-reason" id="gameover-reason">CRASHED INTO TRAIN</p>
+
+      <div class="results-grid">
+        <div class="result-card">
+          <span class="result-label">FINAL SCORE</span>
+          <span class="result-val" id="final-score">0</span>
+        </div>
+        <div class="result-card">
+          <span class="result-label">COINS COLLECTED</span>
+          <span class="result-val coins" id="final-coins">0</span>
+        </div>
+        <div class="result-card" style="grid-column: span 2;">
+          <span class="result-label">ALL-TIME BEST</span>
+          <span class="result-val" id="final-high" style="color: #ffda79;">0</span>
+        </div>
+      </div>
+
+      <button class="btn-primary" id="restart-btn">RUN AGAIN <span style="font-size: 13px; opacity: 0.85; letter-spacing: 1px;">[SPACE]</span></button>
+    </div>
+  </div>
+
+  <!-- Pause Modal -->
+  <div class="modal-overlay" id="pause-modal">
+    <div class="modal-card">
+      <h2 class="game-logo" style="font-size: 36px;">PAUSED</h2>
+      <p class="game-sublogo">CATCH YOUR BREATH</p>
+      <button class="btn-primary" id="resume-btn" style="margin-top: 15px;">RESUME RUN</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="three.min.js"></script>
+  <script src="textures.js"></script>
+  <script src="audio.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
